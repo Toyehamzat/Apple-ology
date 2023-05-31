@@ -5,6 +5,9 @@ import { LatestItem } from "../../components/latestItem";
 import { Pagination, FreeMode, Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
+import { ContactSection } from "../../components/Contact/ContactSection";
+import Footer from "../../components/footer/footer";
+import { Link } from "react-router-dom";
 export function Home() {
   return (
     <Container>
@@ -15,7 +18,9 @@ export function Home() {
             <Title>Apple-ology.</Title>The best way to buy the products you
             love.
           </Intro>
-          <Button>Shop Now</Button>
+          <Link to="/Product">
+            <Button>Shop Now</Button>
+          </Link>
         </LeftScreen>
       </FirstSection>
       <SecondSection>
@@ -36,18 +41,21 @@ export function Home() {
           >
             {latests.map((latest, id) => (
               <SwiperSlide key={id}>
-                <LatestItem latest={latest} />
+                <LatestItem {...latest} />
               </SwiperSlide>
             ))}
           </Swiper>
         </LatestContainer>
       </SecondSection>
+      <ContactSection />
+      <Footer />
     </Container>
   );
 }
 
 const Container = styled.section`
   padding: 0px 0px;
+  height: auto;
 `;
 
 const FirstSection = styled.section`
@@ -57,13 +65,14 @@ const FirstSection = styled.section`
 const LeftScreen = styled.div`
   position: absolute;
   height: 100vh;
-  top: 0;
+  top: 10%;
   width: 45%;
   height: 500px;
   justify-content: center;
   align-items: center;
   padding: 0 60px;
-  padding-top: 190px;
+  padding-top: 100px;
+  background: transparent;
 `;
 
 const Button = styled.button`
@@ -77,10 +86,16 @@ const Button = styled.button`
   font-weight: 600;
   border: none;
   margin-top: 20px;
+  transition: transform 0.5s ease-in-out;
+  &:hover {
+    background-color: #ececec;
+    transform: scale(1.1);
+  }
 `;
 
 const Title = styled.span`
   color: #000000;
+  background: transparent;
 `;
 
 const Intro = styled.div`
@@ -90,6 +105,7 @@ const Intro = styled.div`
   font-weight: 700;
   line-height: 54px;
   margin-bottom: 45px;
+  background: transparent;
 `;
 
 const SecondSection = styled.section`
@@ -109,10 +125,14 @@ const Latest = styled.label`
   color: #6b6b6b;
   font-size: 25px;
   font-weight: 600;
+  background: transparent;
 `;
 
 const Black = styled.label`
   color: black;
+  background: transparent;
 `;
 
-const LatestContainer = styled.div``;
+const LatestContainer = styled.div`
+  background: inherit;
+`;

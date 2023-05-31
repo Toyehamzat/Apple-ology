@@ -3,7 +3,7 @@
         "id":1,
         "name":"IPHONE 14 PRO",
         "describtion":"Pro.Beyond.",
-        "price":"999",
+        "price":999,
         "link":"https://www.apple.com/shop/buy-iphone/iphone-14-pro",
         "images":"latest-14pro"
     },
@@ -11,7 +11,7 @@
         "id":3,
         "name":"IPAD PRO",
         "describtion":"Supercharged by M2.",
-        "price":"799",
+        "price":799,
         "link":"https://www.apple.com/shop/buy-ipad/ipad-pro",
         "images":"latest-ipad"
     },
@@ -19,7 +19,7 @@
         "id":4,
         "name":"MACBOOK PRO 14' AND 16'",
         "describtion":"Mover.Breaker.Boundary",
-        "price":"1999",
+        "price":1999,
         "link":"https://www.apple.com/shop/buy-mac/macbook-pro",
         "images":"latest-macbook"
     },
@@ -27,7 +27,7 @@
         "id":5,
         "name":"APPLE WATCH SERIES 8",
         "describtion":"A healthy leap ahead.",
-        "price":"399",
+        "price":399,
         "link":"https://www.apple.com/shop/buy-watch/apple-watch",
         "images":"latest-watch"
     },
@@ -35,7 +35,7 @@
         "id":6,
         "name":"HOMEPOD",
         "describtion":"Profound sound.",
-        "price":"100000",
+        "price":100000,
         "link":"https://www.apple.com/shop/buy-homepod/homepod",
         "images":"latest-pod"
     }

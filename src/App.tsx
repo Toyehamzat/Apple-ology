@@ -4,6 +4,7 @@ import { Home } from "./pages/Homepage/Home";
 import { Product } from "./pages/ProductPage/Product";
 import { Contact } from "./pages/ContactPage/Contact";
 import { Header } from "./components/Header/navbar";
+import Footer from "./components/footer/footer";
 
 export default function App() {
   return (
@@ -22,4 +23,5 @@ export default function App() {
 
 const Container = styled.section`
 height: 100vh;
+position: relative;
 `;

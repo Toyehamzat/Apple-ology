@@ -1,15 +1,24 @@
+type LatestItemProp= {
+  id: number;
+  name: string;
+  describtion: string;
+  price: number;
+  link: string;
+  images: string;
+}
 import styled from "styled-components";
 import "swiper/css";
 import "swiper/css/pagination";
-export function LatestItem({ latest }) {
+import { CurrencyFormat } from "../utilities/currencyFormatter";
+export function LatestItem({link,name,describtion,price,images }:LatestItemProp) {
   return (
-    <Container href={latest.link}>
+    <Container href={link}>
       <TextContainer>
-        <Name>{latest.name}</Name>
-        <Describtion>{latest.describtion}</Describtion>
-        <Price>Starting from {`$${latest.price}.99`}</Price>
+        <Name>{name}</Name>
+        <Describtion>{describtion}</Describtion>
+        <Price>Starting from {CurrencyFormat(price)}</Price>
       </TextContainer>
-      <Img src={`images/${latest.images}.jpg`} />
+      <Img src={`images/${images}.jpg`} />
     </Container>
   );
 }
@@ -32,6 +41,7 @@ const Container = styled.a`
   box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   background-color: black;
+
 `;
 
 const TextContainer = styled.div`
