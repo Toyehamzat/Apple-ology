@@ -2,7 +2,6 @@ import { Routes, Route } from "react-router-dom";
 import styled from "styled-components";
 import { Home } from "./pages/Homepage/Home";
 import { Products } from "./pages/ProductsPage/products";
-import { Contact } from "./pages/ContactPage/Contact";
 import { Header } from "./components/Header/navbar";
 import { ShoppingCartProvider } from "./context/shoppingCartContext";
 import productss from "../src/data/productarray.json";
@@ -15,7 +14,6 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/Products" element={<Products />}></Route>
-          <Route path="/Contact" element={<Contact />}></Route>
           {productss.map((product, id) => (
             <Route key={id} path={`/Products${id}`} element={<ItemDetails {...product} />} />
           ))}

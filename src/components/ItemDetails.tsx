@@ -4,12 +4,31 @@ type ItemDetailsProps = {
   price: number;
   images: string;
   color: string;
+  manufacture: string;
+  model: string;
+  screenSize: number;
+  simType: string;
+  os: string;
+  ram: number;
+  rom: number;
+  rearCam: string;
+  frontCam: number;
+  network: string;
+  weight: number;
+  batteryCap: number;
 };
-import { Cart3, ChevronRight } from "react-bootstrap-icons";
+import {
+  Arrow90degUp,
+  Back,
+  Cart3,
+  ChevronBarLeft,
+  ChevronRight,
+} from "react-bootstrap-icons";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { CurrencyFormat } from "../utilities/currencyFormatter";
 import { useShoppingCart } from "../context/shoppingCartContext";
+import { useRef } from "react";
 
 export default function ItemDetails({
   id,
@@ -17,6 +36,18 @@ export default function ItemDetails({
   images,
   price,
   color,
+  manufacture,
+  model,
+  screenSize,
+  simType,
+  ram,
+  rom,
+  os,
+  rearCam,
+  frontCam,
+  network,
+  weight,
+  batteryCap,
 }: ItemDetailsProps) {
   const {
     getItemQuantity,
@@ -25,8 +56,10 @@ export default function ItemDetails({
     RemaoveFromCart,
   } = useShoppingCart();
   const quantity = getItemQuantity(id);
+  const TargetDownRef = useRef<HTMLDivElement>(null);
+  const TargetUpRef = useRef<HTMLDivElement>(null);
   return (
-    <Container>
+    <Container ref={TargetUpRef}>
       <Route>
         <Link to="/" id="link">
           Home
@@ -42,7 +75,13 @@ export default function ItemDetails({
           <Detail>
             <Name>{name}</Name>
             <Color>{color}</Color>
-            <View>View all Details</View>
+            <View
+              onClick={() =>
+                TargetDownRef.current?.scrollIntoView({ behavior: "smooth" })
+              }
+            >
+              View all Details
+            </View>
             <Price>{CurrencyFormat(price)}</Price>
           </Detail>
 
@@ -71,15 +110,118 @@ export default function ItemDetails({
             )}
           </AddToCart>
         </Left>
-
         <Right>
-          {" "}
           <Image src={`images/${images}.jpg`} />
         </Right>
       </FirstSection>
-      <SecondSection>
-        <LeftScreen></LeftScreen>
-
+      <SecondSection ref={TargetDownRef}>
+        <LeftScreen>
+          <LeftScreenBody>
+            <Title>Details</Title>
+            <ProductInfo>Product Info</ProductInfo>
+            <InfoContainer>
+              <ManufactureDiv>
+                Manufacturer:
+                <span className="grey">
+                  .........................................................................
+                  {manufacture}
+                </span>
+              </ManufactureDiv>
+              <Model>
+                Model:
+                <span className="grey">
+                  ...........................................................................................
+                  {model}
+                </span>
+              </Model>
+              <Weight>
+                Weight:
+                <span className="grey">
+                  .........................................................................................
+                  {`${weight} kg`}
+                </span>
+              </Weight>
+              <ColorDiv>
+                Color:
+                <span className="grey">
+                  ..............................................................................................
+                  {color}
+                </span>
+              </ColorDiv>
+              <ScreenSizeDiv>
+                Screen Size:
+                <span className="grey">
+                  ................................................................................
+                  {`${screenSize}-inch Display`}
+                </span>
+              </ScreenSizeDiv>
+              <SimType>
+                Sim Type:
+                <span className="grey">
+                  .....................................................................................
+                  {simType}
+                </span>
+              </SimType>
+              <RAM>
+                RAM:
+                <span className="grey">
+                  ................................................................................................
+                  {`${ram}GB`}
+                </span>
+              </RAM>
+              <ROM>
+                ROM:
+                <span className="grey">
+                  ................................................................................................
+                  {`${rom}GB`}
+                </span>
+              </ROM>
+              <OS>
+                Operating system:
+                <span className="grey">
+                  ..................................................................
+                  {os}
+                </span>
+              </OS>
+              <RearCam>
+                Rear Camera Quality:
+                <span className="grey">
+                  ...........................................................
+                  {rearCam}
+                </span>
+              </RearCam>
+              <FrontCam>
+                Front Camera Quality:
+                <span className="grey">
+                  ..........................................................
+                  {`${frontCam}MP`}
+                </span>
+              </FrontCam>
+              <Network>
+                5G Network:
+                <span className="grey">
+                  .................................................................................
+                  {network}
+                </span>
+              </Network>
+              <BatteryCap>
+                Battery Capacity:
+                <span className="grey">
+                  ......................................................................
+                  {`Li-Ion ${batteryCap} mAh, non-removable`}
+                </span>
+              </BatteryCap>
+            </InfoContainer>
+          </LeftScreenBody>
+          <BackBtn
+            onClick={() =>
+              TargetUpRef.current?.scrollIntoView({ behavior: "smooth" })
+            }
+          >
+            <Arrow90degUp size={11} />
+            Up
+          </BackBtn>
+        </LeftScreen>
         <RightScreen>
           <ImageSS src={`images/${images}.jpg`} />
         </RightScreen>
@@ -90,13 +232,10 @@ export default function ItemDetails({
 
 const Container = styled.section`
   padding: 40px 60px;
-  background: linear-gradient(
-      rgba(164, 177, 183, 0.6),
-      rgba(255, 255, 255, 0)
-    ),
+  background: linear-gradient(rgba(164, 177, 183, 0.6), rgba(255, 255, 255, 0)),
     #ffffff;
-    padding-bottom: 0;
-    padding-right:0;
+  padding-bottom: 0;
+  padding-right: 0;
 `;
 
 const FirstSection = styled.div`
@@ -118,7 +257,7 @@ const Right = styled.div`
   justify-content: center;
 `;
 const Image = styled.img`
-  height: 60%;
+  height: 75%;
   width: 400px;
 `;
 
@@ -141,12 +280,16 @@ const Name = styled.div`
 `;
 
 const Color = styled.div`
-  color: #b8b2b2;
+  color: rgb(101, 101, 101);
 `;
 
 const View = styled.div`
   font-size: 22px;
   text-decoration: underline;
+  transition: transform 0.2s ease-in-out;
+  &:hover {
+    transform: scale(0.97);
+  }
 `;
 
 const Price = styled.div`
@@ -172,6 +315,10 @@ const AddToCartBtn = styled.button`
   display: flex;
   justify-content: center;
   gap: 10px;
+  transition: transform 0.3s ease-in-out;
+  &:hover {
+    transform: scale(1.1);
+  }
 `;
 
 const AddToCartActive = styled.div`
@@ -209,16 +356,18 @@ const AddMinusBtn = styled.button`
 const Quantity = styled.span`
   font-size: 3;
 `;
+
 const SecondSection = styled.div`
   height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
 `;
 const LeftScreen = styled.div`
   width: 55%;
+  padding-left: 20px;
+  padding-top: 4%;
 `;
 
 const RightScreen = styled.div`
@@ -230,3 +379,44 @@ const ImageSS = styled.img`
   width: 100%;
   object-fit: cover;
 `;
+
+const LeftScreenBody = styled.div`
+  justify-content: center;
+`;
+
+const Title = styled.div`
+  margin-bottom: 40px;
+  font-size: 22px;
+  font-weight: 600;
+`;
+
+const ProductInfo = styled.div`
+  margin-bottom: 25px;
+  font-size: 16px;
+  font-weight: 600;
+`;
+
+const InfoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 16px;
+  font-weight: 500;
+`;
+const BackBtn = styled.div`
+  margin-top: 7%;
+`;
+
+const ManufactureDiv = styled.div``;
+const Model = styled.div``;
+const Weight = styled.div``;
+const ScreenSizeDiv = styled.div``;
+const SimType = styled.div``;
+const RAM = styled.div``;
+const ROM = styled.div``;
+const OS = styled.div``;
+const RearCam = styled.div``;
+const FrontCam = styled.div``;
+const Network = styled.div``;
+const BatteryCap = styled.div``;
+const ColorDiv = styled.div``;

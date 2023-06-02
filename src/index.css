@@ -54,5 +54,6 @@ video {
 }
 
 .grey{
-    color: rgb(178, 171, 171);
+    color: rgb(101, 101, 101);
+    font-weight: 400;
 }
