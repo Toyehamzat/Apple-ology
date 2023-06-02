@@ -1,27 +1,31 @@
 import { Routes, Route } from "react-router-dom";
 import styled from "styled-components";
 import { Home } from "./pages/Homepage/Home";
-import { Product } from "./pages/ProductPage/Product";
+import { Products } from "./pages/ProductsPage/products";
 import { Contact } from "./pages/ContactPage/Contact";
 import { Header } from "./components/Header/navbar";
-import Footer from "./components/footer/footer";
-
+import { ShoppingCartProvider } from "./context/shoppingCartContext";
+import productss from "../src/data/productarray.json";
+import ItemDetails from "./components/ItemDetails";
 export default function App() {
   return (
-    <>
+    <ShoppingCartProvider>
       <Header />
       <Container>
         <Routes>
           <Route path="/" element={<Home />}></Route>
-          <Route path="/Product" element={<Product />}></Route>
+          <Route path="/Products" element={<Products />}></Route>
           <Route path="/Contact" element={<Contact />}></Route>
+          {productss.map((product, id) => (
+            <Route key={id} path={`/Products${id}`} element={<ItemDetails {...product} />} />
+          ))}
         </Routes>
       </Container>
-    </>
+    </ShoppingCartProvider>
   );
 }
 
 const Container = styled.section`
-height: 100vh;
-position: relative;
+  height: 100vh;
+  position: relative;
 `;

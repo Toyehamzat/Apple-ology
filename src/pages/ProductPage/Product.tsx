@@ -1,36 +1,23 @@
+
 import styled from "styled-components";
-import products from "../../data/product.json";
-import { Col } from "react-bootstrap";
-import { ProductItem } from "../../components/ProductItem";
-export function Product() {
+import { useShoppingCart } from "../../context/shoppingCartContext";
+import  ItemDetails  from "../../components/ItemDetails";
+
+export default function Product() {
+
+  const {CartItem} =useShoppingCart()
   return (
     <Container>
-      <h1>Store.</h1>
-      <Row>
-        {products.map((product) => (
-          <Col key={product.id}>
-            <ProductItem {...product} />
-          </Col>
+      <div>
+        {CartItem.map(item =>(
+          <ItemDetails key={item.id} {...item}/>
         ))}
-      </Row>
+      
+      </div>
     </Container>
   );
 }
 
-const Container = styled.section`
-  margin-top: 20px;
-  padding: 0 60px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-`;
+const Container = styled.div``;
 
-const Row = styled.div`
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-`;
 
-const ItemContainer = styled.div``;

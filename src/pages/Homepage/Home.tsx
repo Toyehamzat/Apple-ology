@@ -18,7 +18,7 @@ export function Home() {
             <Title>Apple-ology.</Title>The best way to buy the products you
             love.
           </Intro>
-          <Link to="/Product">
+          <Link to="/Products">
             <Button>Shop Now</Button>
           </Link>
         </LeftScreen>

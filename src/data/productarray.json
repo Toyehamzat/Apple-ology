@@ -1,0 +1,101 @@
+[
+    {
+        "id": 0,
+        "name": "IPHONE 14 PRO",
+        "describtion": "Pro.Beyond.",
+        "price": 999,
+        "link": "https://www.apple.com/shop/buy-iphone/iphone-14-pro",
+        "images": "latest-14pro",
+        "color": "white"
+    },
+    {
+        "id": 1,
+        "name": "HOMEPOD",
+        "describtion": "Profound sound.",
+        "price": 10000,
+        "link": "https://www.apple.com/shop/buy-homepod/homepod",
+        "images": "latest-pod",
+        "color": "white"
+    },
+    {
+        "id": 2,
+        "name": "IPAD PRO",
+        "describtion": "Supercharged by M2.",
+        "price": 799,
+        "link": "https://www.apple.com/shop/buy-ipad/ipad-pro",
+        "images": "latest-ipad",
+        "color": "white"
+    },
+    {
+        "id": 3,
+        "name": "MACBOOK PRO",
+        "describtion": "Mover.Breaker.Boundary",
+        "price": 199,
+        "link": "https://www.apple.com/shop/buy-mac/macbook-pro",
+        "images": "latest-macbook",
+        "color": "white"
+    },
+    {
+        "id": 4,
+        "name": "APPLE WATCH S8",
+        "describtion": "A healthy leap ahead.",
+        "price": 399,
+        "link": "https://www.apple.com/shop/buy-watch/apple-watch",
+        "images": "latest-watch",
+        "color": "white"
+    },
+    {
+        "id": 5,
+        "name": "HOMEPOD",
+        "describtion": "Profound sound.",
+        "price": 10000,
+        "link": "https://www.apple.com/shop/buy-homepod/homepod",
+        "images": "latest-pod",
+        "color": "white"
+    },
+    {
+        "id": 6,
+        "name": "IPHONE 14 PRO",
+        "describtion": "Pro.Beyond.",
+        "price": 999,
+        "link": "https://www.apple.com/shop/buy-iphone/iphone-14-pro",
+        "images": "latest-14pro",
+        "color": "white"
+    },
+    {
+        "id": 7,
+        "name": "MACBOOK PRO",
+        "describtion": "Mover.Breaker.Boundary",
+        "price": 199,
+        "link": "https://www.apple.com/shop/buy-mac/macbook-pro",
+        "images": "latest-macbook",
+        "color": "white"
+    },
+    {
+        "id": 8,
+        "name": "APPLE WATCH S8",
+        "describtion": "A healthy leap ahead.",
+        "price": 399,
+        "link": "https://www.apple.com/shop/buy-watch/apple-watch",
+        "images": "latest-watch",
+        "color": "white"
+    },
+    {
+        "id": 9,
+        "name": "HOMEPOD",
+        "describtion": "Profound sound.",
+        "price": 10000,
+        "link": "https://www.apple.com/shop/buy-homepod/homepod",
+        "images": "latest-pod",
+        "color": "white"
+    },
+    {
+        "id": 10,
+        "name": "IPAD PRO",
+        "describtion": "Supercharged by M2.",
+        "price": 799,
+        "link": "https://www.apple.com/shop/buy-ipad/ipad-pro",
+        "images": "latest-ipad",
+        "color": "white"
+    }
+]

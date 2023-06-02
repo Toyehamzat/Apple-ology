@@ -52,3 +52,7 @@ video {
 #list {
     cursor: pointer;
 }
+
+.grey{
+    color: rgb(178, 171, 171);
+}
