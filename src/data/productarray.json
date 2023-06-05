@@ -5,7 +5,6 @@
         "describtion": "Pro.Beyond.",
         "price": 999,
         "link": "https://www.apple.com/shop/buy-iphone/iphone-14-pro",
-        "images": "latest-14pro",
         "manufacture": "Apple",
         "model": "Iphone 14 pro",
         "screenSize": 6.7,
@@ -18,7 +17,8 @@
         "network": "Yes",
         "batteryCap": 4323,
         "weight": 0.5,
-        "color": "White"
+        "color": "White",
+        "pictureNoBg": "images/Apple_iPhone_14_Pro.png"
     },
     {
         "id": 1,
@@ -26,8 +26,8 @@
         "describtion": "Profound sound.",
         "price": 10000,
         "link": "https://www.apple.com/shop/buy-homepod/homepod",
-        "images": "latest-pod",
-        "color": "White"
+        "color": "White",
+        "pictureNoBg": "images/apple_homepod__2nd_generation__speaker_-_white-removebg-preview.png"
     },
     {
         "id": 2,
@@ -35,8 +35,8 @@
         "describtion": "Supercharged by M2.",
         "price": 799,
         "link": "https://www.apple.com/shop/buy-ipad/ipad-pro",
-        "images": "latest-ipad",
-        "color": "White"
+        "color": "White",
+        "pictureNoBg": "images/ipadmini-removebg-preview.png"
     },
     {
         "id": 3,
@@ -44,25 +44,16 @@
         "describtion": "Mover.Breaker.Boundary",
         "price": 199,
         "link": "https://www.apple.com/shop/buy-mac/macbook-pro",
-        "images": "latest-macbook",
-        "color": "White"
+        "color": "White",
+        "pictureNoBg": "images/MacBookAir-removebg-preview.png"
     },
     {
         "id": 4,
-        "name": "APPLE WATCH S8",
+        "name": "APPLE WATCH ULTRA",
         "describtion": "A healthy leap ahead.",
         "price": 399,
         "link": "https://www.apple.com/shop/buy-watch/apple-watch",
-        "images": "latest-watch",
-        "color": "White"
-    },
-    {
-        "id": 5,
-        "name": "HOMEPOD",
-        "describtion": "Profound sound.",
-        "price": 10000,
-        "link": "https://www.apple.com/shop/buy-homepod/homepod",
-        "images": "latest-pod",
-        "color": "White"
+        "color": "White",
+        "pictureNoBg": "images/AppleWatchUltra-removebg-preview.png"
     }
 ]

@@ -7,19 +7,22 @@ type ProductItemProps = {
   id: number;
   price: number;
   images: string;
+  pictureNoBg:string;
+
+
 };
-export function ProductItem({ name, id, price, images }: ProductItemProps) {
+export function ProductItem({ name, id, price,pictureNoBg }: ProductItemProps) {
   const {
     getItemQuantity,
     IncreaseCartQuantity,
     DecreaseCartQuantity,
-    RemaoveFromCart,
+    RemoveFromCart,
   } = useShoppingCart();
   const quantity = getItemQuantity(id);
   return (
     <Card>
       <Link id="link" to={`/Products${id}`}>
-        <Img src={`images/${images}.jpg`} />
+        <Img src={`${pictureNoBg}`} />
       </Link>
       <Body>
         <NamePrice>
@@ -43,7 +46,7 @@ export function ProductItem({ name, id, price, images }: ProductItemProps) {
                   +
                 </AddMinusBtn>
               </AddMinus>
-              <RemoveBtn onClick={() => RemaoveFromCart(id)}>Remove</RemoveBtn>
+              <RemoveBtn onClick={() => RemoveFromCart(id)}>Remove</RemoveBtn>
             </AddToCartActive>
           )}
         </AddToCart>

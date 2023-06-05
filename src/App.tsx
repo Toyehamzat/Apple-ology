@@ -6,6 +6,8 @@ import { Header } from "./components/Header/navbar";
 import { ShoppingCartProvider } from "./context/shoppingCartContext";
 import productss from "../src/data/productarray.json";
 import ItemDetails from "./components/ItemDetails";
+import { ShoppingCart } from "./pages/ShoppingCart";
+import productarray from "./data/productarray.json";
 export default function App() {
   return (
     <ShoppingCartProvider>
@@ -14,8 +16,13 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/Products" element={<Products />}></Route>
+          <Route path="/Cart" element={<ShoppingCart />}></Route>
           {productss.map((product, id) => (
-            <Route key={id} path={`/Products${id}`} element={<ItemDetails {...product} />} />
+            <Route
+              key={id}
+              path={`/Products${id}`}
+              element={<ItemDetails {...product} />}
+            />
           ))}
         </Routes>
       </Container>

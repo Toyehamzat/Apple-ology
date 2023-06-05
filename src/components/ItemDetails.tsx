@@ -2,7 +2,6 @@ type ItemDetailsProps = {
   id: number;
   name: string;
   price: number;
-  images: string;
   color: string;
   manufacture: string;
   model: string;
@@ -16,14 +15,11 @@ type ItemDetailsProps = {
   network: string;
   weight: number;
   batteryCap: number;
+  pictureNoBg: string;
+  quantity: number;
+  key: number;
 };
-import {
-  Arrow90degUp,
-  Back,
-  Cart3,
-  ChevronBarLeft,
-  ChevronRight,
-} from "react-bootstrap-icons";
+import { Arrow90degUp, Cart3, ChevronRight } from "react-bootstrap-icons";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { CurrencyFormat } from "../utilities/currencyFormatter";
@@ -33,7 +29,6 @@ import { useRef } from "react";
 export default function ItemDetails({
   id,
   name,
-  images,
   price,
   color,
   manufacture,
@@ -48,12 +43,15 @@ export default function ItemDetails({
   network,
   weight,
   batteryCap,
+  pictureNoBg,
+
+
 }: ItemDetailsProps) {
   const {
     getItemQuantity,
     IncreaseCartQuantity,
     DecreaseCartQuantity,
-    RemaoveFromCart,
+    RemoveFromCart,
   } = useShoppingCart();
   const quantity = getItemQuantity(id);
   const TargetDownRef = useRef<HTMLDivElement>(null);
@@ -103,7 +101,7 @@ export default function ItemDetails({
                     +
                   </AddMinusBtn>
                 </AddMinus>
-                <RemoveBtn onClick={() => RemaoveFromCart(id)}>
+                <RemoveBtn onClick={() => RemoveFromCart(id)}>
                   Remove
                 </RemoveBtn>
               </AddToCartActive>
@@ -111,7 +109,7 @@ export default function ItemDetails({
           </AddToCart>
         </Left>
         <Right>
-          <Image src={`images/${images}.jpg`} />
+          <Image src={`${pictureNoBg}`} />
         </Right>
       </FirstSection>
       <SecondSection ref={TargetDownRef}>
@@ -123,91 +121,91 @@ export default function ItemDetails({
               <ManufactureDiv>
                 Manufacturer:
                 <span className="grey">
-                  .........................................................................
+                  ............................................................
                   {manufacture}
                 </span>
               </ManufactureDiv>
               <Model>
                 Model:
                 <span className="grey">
-                  ...........................................................................................
+                  .......................................................................
                   {model}
                 </span>
               </Model>
               <Weight>
                 Weight:
                 <span className="grey">
-                  .........................................................................................
+                  ......................................................................
                   {`${weight} kg`}
                 </span>
               </Weight>
               <ColorDiv>
                 Color:
                 <span className="grey">
-                  ..............................................................................................
+                  .........................................................................
                   {color}
                 </span>
               </ColorDiv>
               <ScreenSizeDiv>
                 Screen Size:
                 <span className="grey">
-                  ................................................................................
+                  ..............................................................
                   {`${screenSize}-inch Display`}
                 </span>
               </ScreenSizeDiv>
               <SimType>
                 Sim Type:
                 <span className="grey">
-                  .....................................................................................
+                  ...................................................................
                   {simType}
                 </span>
               </SimType>
               <RAM>
                 RAM:
                 <span className="grey">
-                  ................................................................................................
+                  ..........................................................................
                   {`${ram}GB`}
                 </span>
               </RAM>
               <ROM>
                 ROM:
                 <span className="grey">
-                  ................................................................................................
+                  .........................................................................
                   {`${rom}GB`}
                 </span>
               </ROM>
               <OS>
                 Operating system:
                 <span className="grey">
-                  ..................................................................
+                  ......................................................
                   {os}
                 </span>
               </OS>
               <RearCam>
                 Rear Camera Quality:
                 <span className="grey">
-                  ...........................................................
+                  ................................................
                   {rearCam}
                 </span>
               </RearCam>
               <FrontCam>
                 Front Camera Quality:
                 <span className="grey">
-                  ..........................................................
+                  ...............................................
                   {`${frontCam}MP`}
                 </span>
               </FrontCam>
               <Network>
                 5G Network:
                 <span className="grey">
-                  .................................................................................
+                  ...............................................................
                   {network}
                 </span>
               </Network>
               <BatteryCap>
                 Battery Capacity:
                 <span className="grey">
-                  ......................................................................
+                  ........................................................
                   {`Li-Ion ${batteryCap} mAh, non-removable`}
                 </span>
               </BatteryCap>
@@ -223,7 +221,7 @@ export default function ItemDetails({
           </BackBtn>
         </LeftScreen>
         <RightScreen>
-          <ImageSS src={`images/${images}.jpg`} />
+          <ImageSS src={`${pictureNoBg}`} />
         </RightScreen>
       </SecondSection>
     </Container>
@@ -250,14 +248,17 @@ const Left = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
+  padding-top: 25px;
 `;
 const Right = styled.div`
   width: 60%;
   display: flex;
   justify-content: center;
+  padding: 0;
+  height: 75%;
 `;
 const Image = styled.img`
-  height: 75%;
+  height: 100%;
   width: 400px;
 `;
 
@@ -287,6 +288,7 @@ const View = styled.div`
   font-size: 22px;
   text-decoration: underline;
   transition: transform 0.2s ease-in-out;
+  cursor: pointer;
   &:hover {
     transform: scale(0.97);
   }
@@ -373,10 +375,9 @@ const LeftScreen = styled.div`
 const RightScreen = styled.div`
   width: 45%;
   display: flex;
+  justify-content: center;
 `;
 const ImageSS = styled.img`
-  height: 100%;
-  width: 100%;
   object-fit: cover;
 `;
 
@@ -405,6 +406,7 @@ const InfoContainer = styled.div`
 `;
 const BackBtn = styled.div`
   margin-top: 7%;
+  cursor: pointer;
 `;
 
 const ManufactureDiv = styled.div``;

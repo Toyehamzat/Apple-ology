@@ -5,6 +5,9 @@
     font-family: 'Montserrat', sans-serif;
     /* background-color: black; */
 }
+::-webkit-scrollbar{
+    width: 0px;
+}
 
 video {
     width: 100%;
@@ -56,4 +59,14 @@ video {
 .grey{
     color: rgb(101, 101, 101);
     font-weight: 400;
+}
+
+.w-100{
+    width: 100%;
+}
+.flexcol{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-bottom: 50px;
 }

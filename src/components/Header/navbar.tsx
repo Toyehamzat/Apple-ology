@@ -3,14 +3,16 @@ import styled from "styled-components";
 import { List, Heart, Person, Bag } from "react-bootstrap-icons";
 import { NavLink, Link } from "react-router-dom";
 import { Navbar } from "react-bootstrap";
+import { useShoppingCart } from "../../context/shoppingCartContext.tsx";
 export function Header() {
+  const { OpenCart, CartQuantity } = useShoppingCart();
   return (
     <Navbar sticky="top">
       <Container>
         <Icon>
           <List id="list " size={25} />
         </Icon>
-        <Link to="/" id="link" >
+        <Link to="/" id="link">
           <Title>Apple-ology</Title>
         </Link>
         <Icons>
@@ -20,9 +22,9 @@ export function Header() {
           <Link id="link" to="profile" as={NavLink}>
             <Person size={25} />
           </Link>
-          <Cart id="link" to="/cart" as={NavLink}>
+          <Cart id="link" to="/Cart" as={NavLink} onClick={OpenCart}>
             <Bag size={25} />
-            <CartNumber>1</CartNumber>
+            {CartQuantity > 0 && <CartNumber>{CartQuantity}</CartNumber>}
           </Cart>
         </Icons>
       </Container>

@@ -6,7 +6,7 @@ export function Products() {
   return (
 
     <Container>
-      <h1>Store.</h1>
+      <h1>Products.</h1>
       <Row>
         {products.map((product,id) => (
           <Col key={id}>
