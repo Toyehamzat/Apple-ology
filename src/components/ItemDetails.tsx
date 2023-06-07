@@ -267,7 +267,7 @@ const Container = styled.section`
   }
 
   @media (max-width: 496px) {
-    padding: 40px 40px;
+    padding: 30px 30px;
     padding-bottom: 0;
     padding-right: 0;
   }
@@ -307,10 +307,10 @@ const Right = styled.div`
   display: flex;
   justify-content: right;
   padding: 0;
-  height: 75%;
+  height: 80%;
 
   @media (max-width: 423px) {
-    padding-top: 60px;
+    padding-top: 50px;
   }
 `;
 const Image = styled.img`
@@ -379,7 +379,7 @@ const View = styled.div`
   cursor: pointer;
 
   @media (max-width: 550px) {
-    font-size: 20px;
+    font-size: 19px;
   }
   &:hover {
     transform: scale(0.97);
@@ -399,7 +399,6 @@ const AddToCart = styled.div`
 `;
 
 const AddToCartBtn = styled.button`
-  width: 100%;
   padding: 11px;
   color: #ffffff;
   background-color: black;
@@ -413,6 +412,10 @@ const AddToCartBtn = styled.button`
   &:hover {
     transform: scale(1.1);
   }
+
+  @media (max-width:770px) {
+  width:100%;
+}
 `;
 
 const AddToCartActive = styled.div`

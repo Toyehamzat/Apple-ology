@@ -31,7 +31,7 @@ export const Row = styled.div`
   margin: 0 auto;
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 
   @media (max-width: 496px) {
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));

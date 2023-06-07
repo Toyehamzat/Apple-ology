@@ -23,8 +23,9 @@ export const Container = styled.section`
 export const Header = styled.div``;
 
 export const Route = styled.div`
-  margin-top: 20px;
+  /* margin-top: 20px; */
   font-size: 15px;
+  margin-bottom: 60px;
 `;
 
 export const Body = styled.div`

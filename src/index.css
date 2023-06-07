@@ -3,11 +3,16 @@
     padding: 0%;
     margin: 0%;
     font-family: 'Montserrat', sans-serif;
-    /* background-color: black; */
+
 }
 
 ::-webkit-scrollbar {
     width: 0px;
+}
+
+::-webkit-media-controls-start-playback-button{
+    display:none!important;
+    -webkit-appearance:none
 }
 
 video {
@@ -25,12 +30,14 @@ video {
     flex-direction: column;
     justify-content: center;
     background: transparent;
+    padding-left:10px;
 }
 
 .swiper-slide {
     margin-top: 20px;
     background: transparent;
     transition: all .3s ease-in-out;
+    justify-content: center;
 
 
 }
@@ -41,7 +48,7 @@ video {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        
+        padding-bottom:13px;
     }
 }
 
@@ -91,6 +98,7 @@ video {
     .swiper-wrapper {
         display: flex;
         flex-direction: column;
+        justify-content:center;
     }
     .red{
         font-size: 0px;

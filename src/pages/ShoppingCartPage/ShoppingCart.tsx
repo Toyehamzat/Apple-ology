@@ -30,7 +30,6 @@ export function ShoppingCart() {
     <>
       <Container>
         <Header>
-          <h1>Shopping Cart</h1>
           <Route>
             <Link to="/" id="link">
               Home

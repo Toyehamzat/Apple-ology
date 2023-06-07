@@ -7,6 +7,7 @@ import { ChevronRight } from "react-bootstrap-icons";
 import { Footer } from "../../components/footer/footer";
 export function Products() {
   return (
+    <>
     <Container>
       <Route>
         <Link to="/" id="link">
@@ -21,7 +22,9 @@ export function Products() {
           </Col>
         ))}
       </Row>
-      <Footer />
+      
     </Container>
+    <Footer />
+    </>
   );
 }
