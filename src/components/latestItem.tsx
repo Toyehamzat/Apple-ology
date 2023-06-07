@@ -29,6 +29,8 @@ const Img = styled.img`
   object-fit: cover;
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
+
+
 `;
 
 const Container = styled.a`
@@ -41,6 +43,24 @@ const Container = styled.a`
   box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   background-color: black;
+
+
+  @media (max-width: 1115px) {
+    width: 390px;
+    height: 450px;
+  }
+  @media (max-width: 550px) {
+    width: 374px;
+    height: 450px;
+  }
+  @media (max-width: 465px) {
+    width: 357px;
+    height: 450px;
+  }
+  @media (max-width: 438px) {
+    width: 358px;
+    height: 440px;
+  }
 
 `;
 
@@ -58,12 +78,17 @@ const Name = styled.div`
   font-size: 12px;
   font-weight: 500;
   margin-bottom: 7px;
+
+
 `;
 
 const Describtion = styled.div`
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 7px;
+  @media (max-width: 1115px) {
+    font-size: 18px ;
+  }
 `;
 
 const Price = styled.div`
@@ -72,3 +97,5 @@ const Price = styled.div`
   font-weight: 500;
   letter-spacing: 2px;
 `;
+
+

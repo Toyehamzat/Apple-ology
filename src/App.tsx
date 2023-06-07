@@ -6,8 +6,7 @@ import { Header } from "./components/Header/navbar";
 import { ShoppingCartProvider } from "./context/shoppingCartContext";
 import productss from "../src/data/productarray.json";
 import ItemDetails from "./components/ItemDetails";
-import { ShoppingCart } from "./pages/ShoppingCart";
-import productarray from "./data/productarray.json";
+import { ShoppingCart } from "./pages/ShoppingCartPage/ShoppingCart";
 export default function App() {
   return (
     <ShoppingCartProvider>

@@ -7,17 +7,16 @@ type ProductItemProps = {
   id: number;
   price: number;
   images: string;
-  pictureNoBg:string;
-
-
+  pictureNoBg: string;
 };
-export function ProductItem({ name, id, price,pictureNoBg }: ProductItemProps) {
-  const {
-    getItemQuantity,
-    IncreaseCartQuantity,
-    DecreaseCartQuantity,
-    RemoveFromCart,
-  } = useShoppingCart();
+export function ProductItem({
+  name,
+  id,
+  price,
+  pictureNoBg,
+}: ProductItemProps) {
+  const { getItemQuantity, IncreaseCartQuantity, DecreaseCartQuantity } =
+    useShoppingCart();
   const quantity = getItemQuantity(id);
   return (
     <Card>
@@ -46,7 +45,6 @@ export function ProductItem({ name, id, price,pictureNoBg }: ProductItemProps) {
                   +
                 </AddMinusBtn>
               </AddMinus>
-              <RemoveBtn onClick={() => RemoveFromCart(id)}>Remove</RemoveBtn>
             </AddToCartActive>
           )}
         </AddToCart>
@@ -65,6 +63,10 @@ const Img = styled.img`
   object-fit: cover;
   border-radius: 10px;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+
+  @media (max-width: 496px) {
+    height: 200px;
+  }
 `;
 
 const Body = styled.div`
@@ -79,6 +81,15 @@ const Name = styled.div`
   font-size: 18px;
   letter-spacing: 2px;
   font-weight: 500;
+  @media (max-width: 496px) {
+    font-size: 15px;
+    letter-spacing: 1px;
+  }
+
+  @media (max-width: 415px) {
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
 `;
 
 const Price = styled.div`
@@ -86,6 +97,16 @@ const Price = styled.div`
   letter-spacing: 2px;
   font-weight: 600;
   color: #404040;
+
+  @media (max-width: 496px) {
+    font-size: 14px;
+    letter-spacing: 2px;
+  }
+
+  @media (max-width: 415px) {
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
 `;
 
 const NamePrice = styled.div`
@@ -104,6 +125,13 @@ const AddToCartBtn = styled.button`
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  @media (max-width: 496px) {
+    padding: 6px;
+  }
+
+  @media (max-width: 415px) {
+    padding: 5px;
+  }
 `;
 
 const AddToCartActive = styled.div`
@@ -112,6 +140,10 @@ const AddToCartActive = styled.div`
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+
+  @media (max-width: 496px) {
+    gap: 0;
+  }
 `;
 
 const AddMinus = styled.div`
@@ -120,14 +152,7 @@ const AddMinus = styled.div`
   justify-content: center;
   gap: 0.5rem;
 `;
-const RemoveBtn = styled.button`
-  background-color: #db1f1f;
-  padding: 4px;
-  border-radius: 4px;
-  border: none;
-  color: #ffffff;
-  cursor: pointer;
-`;
+
 const AddMinusBtn = styled.button`
   padding: 7px;
   color: #ffffff;
@@ -135,6 +160,13 @@ const AddMinusBtn = styled.button`
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  @media (max-width: 496px) {
+    padding: 6px;
+  }
+
+  @media (max-width: 415px) {
+    padding: 5px;
+  }
 `;
 
 const Quantity = styled.span`

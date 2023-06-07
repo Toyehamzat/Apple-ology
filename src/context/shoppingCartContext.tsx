@@ -17,7 +17,7 @@ type CartItem = {
 };
 
 import { ReactNode, createContext, useContext, useState } from "react";
-import { ShoppingCart } from "../pages/ShoppingCart";
+import { ShoppingCart } from "../pages/ShoppingCartPage/ShoppingCart";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 
 const ShoppingCartContext = createContext({} as ShoppingCartContext);

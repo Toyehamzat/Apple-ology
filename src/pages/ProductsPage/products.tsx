@@ -1,36 +1,27 @@
-import styled from "styled-components";
 import products from "../../data/productarray.json";
 import { Col } from "react-bootstrap";
 import { ProductItem } from "../../components/ProductItem";
+import { Row, Container,Route } from "./styles";
+import { Link } from "react-router-dom";
+import { ChevronRight } from "react-bootstrap-icons";
+import { Footer } from "../../components/footer/footer";
 export function Products() {
   return (
-
     <Container>
-      <h1>Products.</h1>
+      <Route>
+        <Link to="/" id="link">
+          Home
+        </Link>
+        <ChevronRight size={11} /> <span className="grey">Shop Now </span>
+      </Route>
       <Row>
-        {products.map((product,id) => (
+        {products.map((product, id) => (
           <Col key={id}>
             <ProductItem {...product} />
-          </Col> 
+          </Col>
         ))}
       </Row>
+      <Footer />
     </Container>
   );
 }
-
-const Container = styled.section`
-  margin-top: 20px;
-  padding: 0 60px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-`;
-
-const Row = styled.div`
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-`;
-

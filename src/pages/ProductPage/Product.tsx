@@ -1,23 +1,20 @@
-
 import styled from "styled-components";
 import { useShoppingCart } from "../../context/shoppingCartContext";
-import  ItemDetails  from "../../components/ItemDetails";
+import ItemDetails from "../../components/ItemDetails";
 
 export default function Product() {
-
-  const {CartItem} =useShoppingCart()
+  const { cartItems } = useShoppingCart();
   return (
     <Container>
       <div>
-        {CartItem.map(item =>(
-          <ItemDetails key={item.id} {...item}/>
+        {cartItems.map((item) => (
+          <ItemDetails key={item.id} {...item} />
         ))}
-      
       </div>
     </Container>
   );
 }
 
-const Container = styled.div``;
+const Container = styled.div`
 
-
+`;
