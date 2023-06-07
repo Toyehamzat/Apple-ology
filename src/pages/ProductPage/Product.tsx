@@ -8,6 +8,7 @@ export default function Product() {
     <Container>
       <div>
         {cartItems.map((item) => (
+          //@ts-ignore
           <ItemDetails key={item.id} {...item} />
         ))}
       </div>

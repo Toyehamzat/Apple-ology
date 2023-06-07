@@ -1,4 +1,3 @@
-import React from "react";
 import { Github } from "react-bootstrap-icons";
 import {FooterWrapper,GithubLink} from "./styles"
 export function Footer() {

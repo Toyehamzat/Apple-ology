@@ -6,7 +6,6 @@ type ProductItemProps = {
   name: string;
   id: number;
   price: number;
-  images: string;
   pictureNoBg: string;
 };
 export function ProductItem({

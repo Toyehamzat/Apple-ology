@@ -16,30 +16,46 @@ export function CartItem({ id, quantity }: CartItemsProps) {
 
   return (
     <Stack direction="horizontal">
-      <Body>
-        <Image>
-          <Img src={item.pictureNoBg} />
-        </Image>
+    <Body>
+      <Image>
+        <Img
+          //@ts-ignore
+          src={item.pictureNoBg}
+        />
+      </Image>
 
-        <Details>
-          <Name>{item.name}</Name>
-          <Color>{item.color}</Color>
-          <Price>{CurrencyFormat(item.price)}</Price>
-          <ADDMINUSREMOVE>
-            <RemoveBtn onClick={() => RemoveFromCart(id)}>Remove</RemoveBtn>
-            <AddMinus>
-              <AddMinusBtn onClick={() => DecreaseCartQuantity(id)}>
-                -
-              </AddMinusBtn>
-              <Quantity className="fs-10">{`x${quantity}`} </Quantity>
-              <AddMinusBtn onClick={() => IncreaseCartQuantity(id)}>
-                +
-              </AddMinusBtn>
-            </AddMinus>
-          </ADDMINUSREMOVE>
-        </Details>
-      </Body>
-    </Stack>
+      <Details>
+        <Name
+        //@ts-ignore
+        >{item.name}
+        </Name>
+
+        <Color
+        //@ts-ignore
+        >{item.color}
+        </Color>
+
+        <Price>
+          {CurrencyFormat(
+            //@ts-ignore
+            item.price
+          )}
+        </Price>
+        <ADDMINUSREMOVE>
+          <RemoveBtn onClick={() => RemoveFromCart(id)}>Remove</RemoveBtn>
+          <AddMinus>
+            <AddMinusBtn onClick={() => DecreaseCartQuantity(id)}>
+              -
+            </AddMinusBtn>
+            <Quantity className="fs-10">{`x${quantity}`} </Quantity>
+            <AddMinusBtn onClick={() => IncreaseCartQuantity(id)}>
+              +
+            </AddMinusBtn>
+          </AddMinus>
+        </ADDMINUSREMOVE>
+      </Details>
+    </Body>
+ </Stack>
   );
 }
 const Image = styled.div`
@@ -49,11 +65,9 @@ const Image = styled.div`
 
   @media (max-width: 770px) {
     width: 100px;
-
   }
   @media (max-width: 376px) {
     width: 120px;
-   
   }
 `;
 
@@ -61,7 +75,6 @@ const Img = styled.img`
   height: 200px;
   object-fit: cover;
 
-  
   @media (max-width: 770px) {
     height: 150px;
   }
@@ -81,7 +94,6 @@ const Body = styled.div`
     gap: 25px;
     margin-bottom: 10px;
   }
-  
 `;
 
 const Details = styled.div``;
@@ -93,13 +105,11 @@ const Name = styled.div`
 
   @media (max-width: 770px) {
     font-size: 17px;
-
   }
 
   @media (max-width: 376px) {
     font-size: 15px;
     margin-bottom: 5px;
-   
   }
 `;
 
@@ -118,22 +128,18 @@ const ADDMINUSREMOVE = styled.div`
 
   @media (max-width: 400px) {
     width: 180px;
-   
   }
 
   @media (max-width: 376px) {
     width: 170px;
-   
   }
 
   @media (max-width: 376px) {
     width: 155px;
-   
   }
 
   @media (max-width: 360px) {
     width: 140px;
-   
   }
 `;
 

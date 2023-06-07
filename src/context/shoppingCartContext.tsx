@@ -16,8 +16,7 @@ type CartItem = {
   quantity: number;
 };
 
-import { ReactNode, createContext, useContext, useState } from "react";
-import { ShoppingCart } from "../pages/ShoppingCartPage/ShoppingCart";
+import { ReactNode, createContext, useContext} from "react";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 
 const ShoppingCartContext = createContext({} as ShoppingCartContext);

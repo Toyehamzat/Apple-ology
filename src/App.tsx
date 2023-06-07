@@ -20,6 +20,7 @@ export default function App() {
             <Route
               key={id}
               path={`/Products${id}`}
+              //@ts-ignore
               element={<ItemDetails {...product} />}
             />
           ))}

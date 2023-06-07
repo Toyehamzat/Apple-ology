@@ -1,6 +1,8 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import latests from "../../data/latest.json";
 import { LatestItem } from "../../components/latestItem";
+
+//@ts-ignore
 import { Pagination, FreeMode, Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -19,7 +21,6 @@ import {
   Black,
   LatestContainer,
 } from "./styles";
-import { useEffect, useState } from "react";
 export function Home() {
 
   return (
