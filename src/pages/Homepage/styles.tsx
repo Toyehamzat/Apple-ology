@@ -38,8 +38,8 @@ export const LeftScreen = styled.div`
   }
 
   @media (max-width: 550px) {
-    padding: 80px 0px;
-    min-width: 350px;
+    padding: 30px 15px;
+  
   }
 `;
 
