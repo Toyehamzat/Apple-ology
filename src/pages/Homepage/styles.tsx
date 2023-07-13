@@ -30,6 +30,7 @@ export const LeftScreen = styled.div`
   padding-top: 100px;
   background: transparent;
   min-width: 414px;
+  text-align: left;
 
   @media (max-width: 770px) {
     padding: 80px 30px;
@@ -37,8 +38,8 @@ export const LeftScreen = styled.div`
   }
 
   @media (max-width: 550px) {
-    padding: 80px 30px;
-    min-width: 359px;
+    padding: 80px 0px;
+    min-width: 350px;
   }
 `;
 
