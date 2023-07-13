@@ -1,22 +1,9 @@
-// import { Github } from "react-bootstrap-icons";
-// import {FooterWrapper,GithubLink} from "./styles"
 import { ArrowBarRight } from "react-bootstrap-icons";
 import "./STYLES.css";
 export function Footer() {
   return (
-    // <FooterWrapper>
-    //   Copyright © 2023 Toyehamzat
-    //   <GithubLink
-    //     href="https://github.com/Toyehamzat"
-    //     target="_blank"
-    //     rel="noopener"
-    //   >
-    //     <Github />
-    //   </GithubLink>
-    // </FooterWrapper>
     <>
       <footer id="footer">
-  
         <form action="" onSubmit={(e) => e.preventDefault()}>
           <h4>
             <label htmlFor="user-email">STAY IN THE KNOW</label>
@@ -28,13 +15,13 @@ export function Footer() {
               id="user-email"
               placeholder="Email Address"
             />
-            
+
             <button type="submit">
               <ArrowBarRight />
             </button>
           </div>
         </form>
-        
+
         <div id="footer-contact">
           <h4>SOCIAL</h4>
           <h4>INITIATIVES</h4>

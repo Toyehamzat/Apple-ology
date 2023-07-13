@@ -23,7 +23,6 @@ import {
   CheckOutBtn,
   PayPalBtn,
 } from "./styles";
-import { Footer } from "../../components/footer/footer";
 export function ShoppingCart() {
   const { cartItems } = useShoppingCart();
   return (
