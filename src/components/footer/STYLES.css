@@ -69,7 +69,9 @@ form #footer h4 {
 }
 
 #footer form input::placeholder {
-    color: white;
+    color: rgb(150, 150, 150);
+    font-weight: 600;
+    
 }
 
 #footer form button {
