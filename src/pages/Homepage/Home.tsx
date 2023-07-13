@@ -29,7 +29,7 @@ export function Home() {
         </video>
         <LeftScreen>
           <Intro>
-            <Title>Appleology.</Title> The best way to buy the products you
+            <Title>Apple-ology.</Title> The best way to buy the products you
             love.
           </Intro>
           <Link to="/Products">
