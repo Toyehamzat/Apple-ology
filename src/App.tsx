@@ -7,6 +7,8 @@ import { ShoppingCartProvider } from "./context/shoppingCartContext";
 import productss from "../src/data/productarray.json";
 import ItemDetails from "./components/ItemDetails";
 import { ShoppingCart } from "./pages/ShoppingCartPage/ShoppingCart";
+import { Footer } from "./components/footer/footer";
+import { UniversalAccess } from "react-bootstrap-icons";
 export default function App() {
   return (
     <ShoppingCartProvider>
@@ -26,11 +28,30 @@ export default function App() {
           ))}
         </Routes>
       </Container>
+      <Button type="button">
+        <UniversalAccess size={25} />
+      </Button>
+      <Footer />
     </ShoppingCartProvider>
   );
 }
 
 const Container = styled.section`
-  height: 100vh;
   position: relative;
+`;
+
+const Button = styled.button`
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 5%;
+  left: 5%;
+  background-color: black;
+  color: white;
+  border: black;
+  transition: all 0.4s ease-in-out;
+  &:hover {
+    transform: scale(1.3);
+  }
 `;

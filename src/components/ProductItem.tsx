@@ -20,7 +20,9 @@ export function ProductItem({
   return (
     <Card>
       <Link id="link" to={`/Products${id}`}>
-        <Img src={`${pictureNoBg}`} />
+        <ImgContainer>
+          <Img src={`${pictureNoBg}`} />
+        </ImgContainer>
       </Link>
       <Body>
         <NamePrice>
@@ -56,15 +58,25 @@ const Card = styled.div`
   height: 100%;
 `;
 
-const Img = styled.img`
-  height: 280px;
-  width: 100%;
-  object-fit: cover;
+const ImgContainer = styled.div`
   border-radius: 10px;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+`;
+
+const Img = styled.img`
+  height: 280px;
+  width: 90%;
+  object-fit: cover;
+
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.03);
+  }
 
   @media (max-width: 496px) {
     height: 200px;
+    width: 100%;
   }
 `;
 

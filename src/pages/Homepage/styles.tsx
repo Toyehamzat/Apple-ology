@@ -21,8 +21,8 @@ export const FirstSection = styled.section`
 `;
 export const LeftScreen = styled.div`
   position: absolute;
-  top: 10%;
-  width: 45%;
+  top: 4%;
+  width: 42%;
   height: 500px;
   justify-content: center;
   align-items: center;
@@ -40,7 +40,6 @@ export const LeftScreen = styled.div`
     padding: 80px 30px;
     min-width: 359px;
   }
-
 `;
 
 export const Button = styled.button`
@@ -54,10 +53,31 @@ export const Button = styled.button`
   font-weight: 600;
   border: none;
   margin-top: 20px;
-  transition: transform 0.5s ease-in-out;
+  outline: 0;
+  border: none;
+  overflow: hidden;
+  transition: all 0.08s ease-in;
+  -o-transition: 0.08s ease-in;
+  -ms-transition: 0.08s ease-in;
+  -moz-transition: 0.08s ease-in;
+  -webkit-transition: 0.08s ease-in;
   &:hover {
-    background-color: #ececec;
-    transform: scale(1.1);
+    color: #ffffff;
+    transform: scale(1);
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    background: black;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 100%;
+    z-index: -1;
+    -webkit-transition: top 0.09s ease-in;
+  }
+  &:hover::before {
+    top: 0;
   }
 `;
 
@@ -98,7 +118,7 @@ export const SecondSection = styled.section`
   animation: fadeIn ease 2s;
 
   @media (max-width: 1115px) {
-   padding: 60px 40px;
+    padding: 60px 40px;
   }
 
   @media (max-width: 438px) {
@@ -122,7 +142,6 @@ export const Latest = styled.label`
   background: transparent;
   @media (max-width: 550px) {
     font-size: 15px;
-  
   }
 `;
 

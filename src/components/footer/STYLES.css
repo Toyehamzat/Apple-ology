@@ -1,0 +1,143 @@
+#footer .logo {
+    letter-spacing: initial;
+}
+
+#footer h3 {
+    margin: 0;
+}
+
+#footer h4:before {
+    margin-right: 5px;
+    content: '●';
+    font-size: 1.5rem;
+}
+
+form #footer h4 {
+    margin: 0;
+    font-weight: 400;
+}
+
+
+#footer {
+    margin-top: 30px;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 5% 5%;
+    min-height: 60vh;
+    background-color: var(--textColor);
+    color: white;
+    display: grid;
+    column-gap: 5%;
+    row-gap: 2.5%;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    background-color: black;
+    color: white;
+}
+
+#line{
+    border-bottom: 1px solid white;
+}
+
+#footer p {
+    font-size: 1.7rem;
+    margin: 0;
+}
+
+#footer p a {
+    color: inherit;
+    background-color: inherit;
+}
+
+#footer form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#footer form input {
+    width: 80%;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    height: 40px;
+    font-size: 1rem;
+    color: white;
+    padding-left: 0;
+    font-weight: 200;
+    height: fit-content;
+}
+
+#footer form input::placeholder {
+    color: white;
+}
+
+#footer form button {
+    border: none;
+    background-color: inherit;
+    color: white;
+    cursor: pointer;
+}
+
+form>div {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 2.5%;
+}
+
+#footer-contact {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 7fr;
+    row-gap: 20px;
+}
+
+#footer-contact ul {
+    margin: 0;
+    padding: 0;
+}
+
+#footer-contact ul li {
+    list-style-type: none;
+}
+
+#footer-contact ul li a {
+    text-decoration: none;
+    font-weight: 200;
+}
+
+#footer-contact ul li a:hover {
+    text-decoration: underline;
+}
+
+#end {
+    position: relative;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #191918;
+    width: 100%;
+    padding: 0 5%;
+    height: 7.5vh;
+    font-size: 11px;
+    color: #5e5e5e;
+    box-sizing: border-box;
+}
+
+@media all and (max-width: 900px) {
+    #footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 5vh;
+    }
+
+    #footer>p {
+        font-size: max(1rem, 2vw);
+    }
+
+    #footer-contact {
+        font-size: max(12px, 1vw);
+    }
+}

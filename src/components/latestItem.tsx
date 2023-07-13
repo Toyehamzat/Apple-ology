@@ -3,16 +3,15 @@ type LatestItemProp= {
   name: string;
   describtion: string;
   price: number;
-  link: string;
   images: string;
 }
 import styled from "styled-components";
 import "swiper/css";
 import "swiper/css/pagination";
 import { CurrencyFormat } from "../utilities/currencyFormatter";
-export function LatestItem({link,name,describtion,price,images }:LatestItemProp) {
+export function LatestItem({name,describtion,price,images }:LatestItemProp) {
   return (
-    <Container href={link}>
+    <Container>
       <TextContainer>
         <Name>{name}</Name>
         <Describtion>{describtion}</Describtion>

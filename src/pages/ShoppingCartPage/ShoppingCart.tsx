@@ -81,7 +81,7 @@ export function ShoppingCart() {
                 </EstitmatedShipping>
               </div>
               <Total>
-                Total 
+                Total
                 <span>
                   {CurrencyFormat(
                     cartItems.reduce((total, CartItem) => {
@@ -116,7 +116,6 @@ export function ShoppingCart() {
             </SummaryContainer>
           </Right>
         </Body>
-        <Footer/>
       </Container>
     </>
   );

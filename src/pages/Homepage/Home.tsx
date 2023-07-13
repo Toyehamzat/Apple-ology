@@ -3,11 +3,10 @@ import latests from "../../data/latest.json";
 import { LatestItem } from "../../components/latestItem";
 
 //@ts-ignore
-import { Pagination, FreeMode, Navigation } from "swiper";
+import { FreeMode, Mousewheel, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 import { ContactSection } from "../../components/Contact/ContactSection";
-import { Footer } from "../../components/footer/footer";
 import { Link } from "react-router-dom";
 import {
   Container,
@@ -22,11 +21,12 @@ import {
   LatestContainer,
 } from "./styles";
 export function Home() {
-
   return (
     <Container>
       <FirstSection>
-        <video src="images/large.mp4"autoPlay loop muted></video>
+        <video autoPlay loop muted playsInline>
+          <source src="images/large.mp4" type="video/mp4" />
+        </video>
         <LeftScreen>
           <Intro>
             <Title>Apple-ology.</Title>The best way to buy the products you
@@ -43,15 +43,13 @@ export function Home() {
         </Latest>
         <LatestContainer>
           <Swiper
-            slidesPerView={2.8}
+            slidesPerView={3.3}
             spaceBetween={30}
             freeMode={true}
             onSlideChange={() => console.log("slide changed")}
             onSwiper={(swiper) => console.log(swiper)}
-            pagination={{
-              clickable: true,
-            }}
-            modules={[Pagination, FreeMode, Navigation]}
+            mousewheel={true}
+            modules={[FreeMode, Mousewheel]}
           >
             {latests.map((latest, id) => (
               <SwiperSlide key={id}>
@@ -62,7 +60,6 @@ export function Home() {
         </LatestContainer>
       </SecondSection>
       <ContactSection />
-      <Footer />
     </Container>
   );
 }

@@ -129,7 +129,7 @@ export default function ItemDetails({
                   Model:
                   <span className="grey">
                     <span className="red">
-                      .......................................................................
+                      ..............................................................................
                     </span>
                     {`${model}`}
                   </span>
@@ -138,7 +138,7 @@ export default function ItemDetails({
                   Weight:
                   <span className="grey">
                     <span className="red">
-                      ......................................................................
+                      ...........................................................................
                     </span>
                     {`${weight} kg`}
                   </span>
@@ -147,7 +147,7 @@ export default function ItemDetails({
                   Color:
                   <span className="grey">
                     <span className="red">
-                      .........................................................................
+                      .................................................................................
                     </span>
                     {`${color}`}
                   </span>
@@ -156,7 +156,7 @@ export default function ItemDetails({
                   Screen Size:
                   <span className="grey">
                     <span className="red">
-                      ..............................................................
+                      ..................................................................
                     </span>
                     {`${screenSize}-inch Display`}
                   </span>
@@ -165,7 +165,7 @@ export default function ItemDetails({
                   Sim Type:
                   <span className="grey">
                     <span className="red">
-                      ...................................................................
+                      .......................................................................
                     </span>
                     {`${simType}`}
                   </span>
@@ -174,7 +174,7 @@ export default function ItemDetails({
                   RAM:
                   <span className="grey">
                     <span className="red">
-                      ..........................................................................
+                      ..................................................................................
                     </span>
                     {`${ram}GB`}
                   </span>
@@ -183,7 +183,7 @@ export default function ItemDetails({
                   ROM:
                   <span className="grey">
                     <span className="red">
-                      .........................................................................
+                      .................................................................................
                     </span>
                     {`${rom}GB`}
                   </span>
@@ -192,7 +192,7 @@ export default function ItemDetails({
                   Operating system:
                   <span className="grey">
                     <span className="red">
-                      ......................................................
+                      ...................................................
                     </span>
                     {`${os}`}
                   </span>
@@ -201,7 +201,7 @@ export default function ItemDetails({
                   Rear Camera Quality:
                   <span className="grey">
                     <span className="red">
-                      ................................................
+                      ............................................
                     </span>
                     {`${rearCam}`}
                   </span>
@@ -210,7 +210,7 @@ export default function ItemDetails({
                   Front Camera Quality:
                   <span className="grey">
                     <span className="red">
-                      ...............................................
+                      ...........................................
                     </span>
                     {`${frontCam}MP`}
                   </span>
@@ -219,7 +219,7 @@ export default function ItemDetails({
                   5G Network:
                   <span className="grey">
                     <span className="red">
-                      ...............................................................
+                      ..................................................................
                     </span>
                     {`${network}`}
                   </span>
@@ -228,7 +228,7 @@ export default function ItemDetails({
                   Battery Capacity:
                   <span className="grey">
                     <span className="red">
-                      ........................................................
+                      ......................................................
                     </span>
                     {`Li-Ion ${batteryCap} mAh`}
                   </span>
@@ -255,8 +255,7 @@ export default function ItemDetails({
 
 const Container = styled.section`
   padding: 40px 60px;
-  background: linear-gradient(rgba(164, 177, 183, 0.6), rgba(255, 255, 255, 0)),
-    #ffffff;
+  background-color: white;
   padding-bottom: 0;
   padding-right: 0;
 
@@ -300,33 +299,28 @@ const Left = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding-top: 25px;
+  padding-top: 7%;
 `;
 const Right = styled.div`
   width: 60%;
   display: flex;
-  justify-content: right;
+  justify-content: center;
   padding: 0;
-  height: 80%;
 
   @media (max-width: 423px) {
-    padding-top: 50px;
+    padding-top: 25px;
   }
 `;
 const Image = styled.img`
-  height: 100%;
-  width: 400px;
+  object-fit: cover;
 
   @media (max-width: 770px) {
     width: 250px;
     height: 80%;
-    padding-top: 33px;
   }
   @media (max-width: 423px) {
-    padding-top: 66px;
     width: 230px;
     height: 65%;
-    padding-top: 33px;
     object-fit: cover;
   }
 `;
@@ -340,7 +334,6 @@ const Detail = styled.div`
 `;
 
 const Route = styled.div`
-  margin-bottom: 40px;
   font-size: 15px;
 
   @media (max-width: 496px) {
@@ -413,9 +406,9 @@ const AddToCartBtn = styled.button`
     transform: scale(1.1);
   }
 
-  @media (max-width:770px) {
-  width:100%;
-}
+  @media (max-width: 770px) {
+    width: 100%;
+  }
 `;
 
 const AddToCartActive = styled.div`
@@ -460,12 +453,12 @@ const SecondSection = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  @media (max-width:770px) {
-  justify-content: center;
-}
+  @media (max-width: 770px) {
+    justify-content: center;
+  }
 `;
 const LeftScreen = styled.div`
-  width: 55%;
+  width: 50%;
   padding-top: 4%;
   @media (max-width: 770px) {
     width: 100%;
@@ -473,7 +466,7 @@ const LeftScreen = styled.div`
 `;
 
 const RightScreen = styled.div`
-  width: 45%;
+  width: 50%;
   display: flex;
   justify-content: space-between;
   @media (max-width: 770px) {
@@ -504,14 +497,13 @@ const ProductInfo = styled.div`
   margin-bottom: 25px;
   font-size: 16px;
   font-weight: 600;
-
-
 `;
 
 const InfoContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 5px;
+  padding-top: 60px;
   font-size: 16px;
   font-weight: 500;
   @media (max-width: 770px) {
