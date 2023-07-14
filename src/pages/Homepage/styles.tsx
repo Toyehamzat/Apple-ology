@@ -57,7 +57,7 @@ export const Button = styled.button`
   font-size: 16px;
   font-weight: 600;
   border: none;
-  margin-top: 15px;
+  margin-top: 10px;
   outline: 0;
   border: none;
   overflow: hidden;
@@ -145,7 +145,7 @@ export const ImageCon = styled.div`
 `;
 export const Image = styled.img`
   position: absolute;
-  top: -50%;
+  top: -45%;
   left: 40%;
   transform: rotate(20deg);
 `;

@@ -49,7 +49,7 @@ export function Header() {
         </Link>
         <Icons>
           {/* <Link id="link" to="/likedItem" as={NavLink}> */}
-          <Heart className="reduce" size={25} />
+          <Heart className="reduce" size={27} />
           {/* </Link> */}
           {/* <Link id="link" to="profile" as={NavLink}> */}
           <Cart id="link" to="/Cart" as={NavLink}>

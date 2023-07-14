@@ -41,13 +41,15 @@ export const Icons = styled.div`
   width: auto;
   display: flex;
   justify-content: space-between;
+  text-align: center;
+  align-items: center;
   gap: 35px;
   @media (max-width: 700px) {
     gap: 20px;
   }
 
   @media (max-width: 550px) {
-    gap: 14px;
+    gap: 17px;
   }
   @media (max-width: 370px) {
     gap: 11px;
@@ -75,6 +77,11 @@ export const CartNumber = styled.div`
   bottom: 0;
   right: 0;
   color: black;
+  @media (max-width: 550px) {
+    height: 10px;
+    width: 10px;
+    font-size: 10px;
+  }
 `;
 export const Profile = styled.div`
   display: flex;
@@ -89,8 +96,8 @@ export const Profile = styled.div`
   position: relative;
 
   @media (max-width: 700px) {
-    height: 30px;
-    width: 30px;
+    height: 28px;
+    width: 28px;
   }
 `;
 
