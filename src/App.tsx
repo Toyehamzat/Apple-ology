@@ -3,17 +3,13 @@ import styled from "styled-components";
 import { Home } from "./pages/Homepage/Home";
 import { Products } from "./pages/ProductsPage/products";
 import { Header } from "./components/Header/navbar";
-import {
-  ShoppingCartProvider,
-  useShoppingCart,
-} from "./context/shoppingCartContext";
+import { ShoppingCartProvider } from "./context/shoppingCartContext";
 import productss from "../src/data/productarray.json";
 import ItemDetails from "./components/ItemDetails";
 import { ShoppingCart } from "./pages/ShoppingCartPage/ShoppingCart";
 import { Footer } from "./components/footer/footer";
 import { Bag } from "react-bootstrap-icons";
 export default function App() {
-  const { CartQuantity } = useShoppingCart();
   return (
     <ShoppingCartProvider>
       <Header />

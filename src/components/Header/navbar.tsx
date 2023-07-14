@@ -18,15 +18,15 @@ import {
 import { useState } from "react";
 export function Header() {
   const { CartQuantity } = useShoppingCart();
-  const [selectedOption, setSelectedOption] = useState("");
+  // const [selectedOption, setSelectedOption] = useState("");
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
 
-  const handleOptionSelect = (option: any) => {
-    setSelectedOption(option);
+  const handleOptionSelect = () => {
+    // setSelectedOption(option);
     setIsOpen(false);
   };
 
@@ -52,17 +52,17 @@ export function Header() {
             {isOpen && (
               <DropdownMenuList>
                 <DropdownMenuItem
-                  onClick={() => handleOptionSelect("Option 1")}
+                  onClick={() => handleOptionSelect()}
                 >
                   Option 1
                 </DropdownMenuItem>
                 <DropdownMenuItem
-                  onClick={() => handleOptionSelect("Option 2")}
+                  onClick={() => handleOptionSelect()}
                 >
                   Option 2
                 </DropdownMenuItem>
                 <DropdownMenuItem
-                  onClick={() => handleOptionSelect("Option 3")}
+                  onClick={() => handleOptionSelect()}
                 >
                   Option 3
                 </DropdownMenuItem>
