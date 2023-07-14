@@ -94,7 +94,6 @@ export const Profile = styled.div`
   }
 `;
 
-
 export const Dropdown = styled.div`
   position: relative;
   display: inline-block;
@@ -108,26 +107,40 @@ export const DropdownToggle = styled.div`
 `;
 
 export const DropdownMenuList = styled.ul`
-transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   position: absolute;
-  top: 150%;
+  top: 100%;
+  font-size: 15px;
   width: 100px;
   right: 0;
   margin: 0;
   padding: 0;
   list-style: none;
   background-color: #000000;
-  border: 1px solid #000000;
+  border: none;
   border-radius: 7px;
-  z-index:10001;
+  animation: fadein ease 3s;
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 `;
 
 export const DropdownMenuItem = styled.li`
   padding: 10px;
   cursor: pointer;
+  display: flex;
+  justify-content: space-between;
 
   &:hover {
-    background-color:rgb(39, 39, 39);
+    background-color: rgb(39, 39, 39);
   }
 `;
 
+export const Label = styled.label`
+  cursor: pointer;
+`;

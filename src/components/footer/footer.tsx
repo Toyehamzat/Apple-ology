@@ -215,7 +215,7 @@ export function Footer() {
         </div>
       </footer>
       <section id="end">
-        <div>APPLE-LOGY®</div>
+        <div>APPLE-OLOGY®</div>
         <div>BUY WHAT YOU LOVE.™</div>
         <div>TERMS, PRIVACY POLICY</div>
       </section>

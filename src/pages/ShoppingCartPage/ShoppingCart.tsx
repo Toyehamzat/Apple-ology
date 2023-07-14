@@ -24,7 +24,7 @@ import {
   PayPalBtn,
 } from "./styles";
 export function ShoppingCart() {
-  const { cartItems } = useShoppingCart();
+  const { cartItems, CartQuantity } = useShoppingCart();
   return (
     <>
       <Container>
@@ -43,11 +43,15 @@ export function ShoppingCart() {
         </Header>
         <Body>
           <Left>
-            <Stack className="w-100" gap={5}>
-              {cartItems.map((items) => (
-                <CartItem key={items.id} {...items} />
-              ))}
-            </Stack>
+            {CartQuantity > 0 ? (
+              <Stack className="w-100" gap={5}>
+                {cartItems.map((items) => (
+                  <CartItem key={items.id} {...items} />
+                ))}
+              </Stack>
+            ) : (
+              <h1>CART IS CURRENTLY EMPTY...</h1>
+            )}
           </Left>
           <Right>
             <SummaryContainer>

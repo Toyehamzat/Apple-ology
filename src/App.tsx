@@ -29,7 +29,7 @@ export default function App() {
         </Routes>
       </Container>
       <Button type="button" to="/Cart" as={NavLink}>
-        <Bag id="bag" size={29} />
+        <Bag id="bag" size={23} />
       </Button>
       <Footer />
     </ShoppingCartProvider>
@@ -37,17 +37,16 @@ export default function App() {
 }
 
 const Container = styled.section`
-  position: relative;
 `;
 
 const Button = styled.button`
-  width: 50px;
-  height: 50px;
+  width:35px;
+  height:35px;
   border-radius: 50%;
   position: fixed;
   bottom: 5%;
   left: 5%;
-  padding: 8px;
+  padding: 5px;
   display: flex;
   justify-content: center;
   background-color: black;

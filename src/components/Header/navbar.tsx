@@ -1,5 +1,5 @@
 import "./styles.tsx";
-import { List, Heart, Person, Bag, ChevronUp } from "react-bootstrap-icons";
+import { List, Heart, Person, Bag, ChevronUp, ArrowBarRight, PersonFillAdd } from "react-bootstrap-icons";
 import { NavLink, Link } from "react-router-dom";
 import { Navbar } from "react-bootstrap";
 import { useShoppingCart } from "../../context/shoppingCartContext.tsx";
@@ -14,6 +14,7 @@ import {
   Dropdown,
   DropdownMenuList,
   DropdownMenuItem,
+  Label,
 } from "./styles.tsx";
 import { useState } from "react";
 export function Header() {
@@ -45,7 +46,7 @@ export function Header() {
           {/* </Link> */}
           {/* <Link id="link" to="profile" as={NavLink}> */}
           <Dropdown>
-            <Profile>
+            <Profile onClick={toggleDropdown}>
               <Person className="reduce" size={25} />
               <ChevronUp onClick={toggleDropdown} className={isOpen? "chevronup active":"chevronup"} size={13} />
             </Profile>
@@ -54,17 +55,14 @@ export function Header() {
                 <DropdownMenuItem
                   onClick={() => handleOptionSelect()}
                 >
-                  Option 1
+                  <ArrowBarRight/>
+                  <Label>Sign in</Label>
                 </DropdownMenuItem>
                 <DropdownMenuItem
                   onClick={() => handleOptionSelect()}
                 >
-                  Option 2
-                </DropdownMenuItem>
-                <DropdownMenuItem
-                  onClick={() => handleOptionSelect()}
-                >
-                  Option 3
+                  <PersonFillAdd/>
+                  <Label>Sign Up</Label>
                 </DropdownMenuItem>
               </DropdownMenuList>
             )}

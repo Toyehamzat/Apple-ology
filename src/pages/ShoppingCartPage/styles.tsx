@@ -26,6 +26,7 @@ export const Route = styled.div`
   /* margin-top: 20px; */
   font-size: 15px;
   margin-bottom: 60px;
+  position: relative;
 `;
 
 export const Body = styled.div`
@@ -80,7 +81,7 @@ export const SummaryContainer = styled.div`
   padding: 40px 40px;
   position: relative;
   border-radius: 15px;
-  z-index: 1000;
+  z-index: -1000;
 `;
 
 export const Input = styled.input`

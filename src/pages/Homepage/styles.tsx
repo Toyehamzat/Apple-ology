@@ -2,13 +2,15 @@ import styled from "styled-components";
 export const Container = styled.section`
   padding: 0px 0px;
   height: auto;
+
 `;
 
 export const FirstSection = styled.section`
   width: 100%;
   height: 100vh;
-
   animation: fadeIn ease 2s;
+  position: relative;
+   z-index: -999;
 
   @keyframes fadeIn {
     0% {
@@ -57,6 +59,8 @@ export const Button = styled.button`
   outline: 0;
   border: none;
   overflow: hidden;
+  position: relative;
+  z-index: 100000;
   transition: all 0.08s ease-in;
   -o-transition: 0.08s ease-in;
   -ms-transition: 0.08s ease-in;

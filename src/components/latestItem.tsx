@@ -1,15 +1,20 @@
-type LatestItemProp= {
+type LatestItemProp = {
   id: number;
   name: string;
   describtion: string;
   price: number;
   images: string;
-}
+};
 import styled from "styled-components";
 import "swiper/css";
 import "swiper/css/pagination";
 import { CurrencyFormat } from "../utilities/currencyFormatter";
-export function LatestItem({name,describtion,price,images }:LatestItemProp) {
+export function LatestItem({
+  name,
+  describtion,
+  price,
+  images,
+}: LatestItemProp) {
   return (
     <Container>
       <TextContainer>
@@ -28,8 +33,6 @@ const Img = styled.img`
   object-fit: cover;
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
-
-
 `;
 
 const Container = styled.a`
@@ -42,7 +45,6 @@ const Container = styled.a`
   box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   background-color: black;
-
 
   @media (max-width: 1115px) {
     width: 390px;
@@ -60,7 +62,6 @@ const Container = styled.a`
     width: 358px;
     height: 440px;
   }
-
 `;
 
 const TextContainer = styled.div`
@@ -77,8 +78,6 @@ const Name = styled.div`
   font-size: 12px;
   font-weight: 500;
   margin-bottom: 7px;
-
-
 `;
 
 const Describtion = styled.div`
@@ -86,7 +85,7 @@ const Describtion = styled.div`
   font-weight: 600;
   margin-bottom: 7px;
   @media (max-width: 1115px) {
-    font-size: 18px ;
+    font-size: 18px;
   }
 `;
 
@@ -96,5 +95,3 @@ const Price = styled.div`
   font-weight: 500;
   letter-spacing: 2px;
 `;
-
-
