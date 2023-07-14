@@ -128,7 +128,8 @@ form>div {
     padding: 0 5%;
     height: 7.5vh;
     font-size: 11px;
-    color: #5e5e5e;
+    font-weight: 600;
+    color: rgb(150, 150, 150);
     box-sizing: border-box;
 }
 

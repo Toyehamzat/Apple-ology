@@ -80,6 +80,7 @@ export const SummaryContainer = styled.div`
   padding: 40px 40px;
   position: relative;
   border-radius: 15px;
+  z-index: 1000;
 `;
 
 export const Input = styled.input`

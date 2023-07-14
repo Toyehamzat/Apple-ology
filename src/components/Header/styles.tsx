@@ -9,16 +9,14 @@ export const Container = styled.div`
   align-items: center;
   justify-content: space-between;
   position: sticky;
-  height: 90px;
+  height: 70px;
 
   @media (max-width: 700px) {
     padding: 20px 30px;
-
   }
 
   @media (max-width: 550px) {
     padding: 15px 15px;
-
   }
 `;
 
@@ -30,15 +28,12 @@ export const Title = styled.div`
 
   @media (max-width: 700px) {
     font-size: 25px;
-
   }
   @media (max-width: 550px) {
     font-size: 24px;
-
   }
   @media (max-width: 370px) {
     font-size: 21px;
-
   }
 `;
 
@@ -49,16 +44,13 @@ export const Icons = styled.div`
   gap: 35px;
   @media (max-width: 700px) {
     gap: 20px;
-
   }
 
   @media (max-width: 550px) {
     gap: 14px;
-
   }
   @media (max-width: 370px) {
     gap: 11px;
-
   }
 `;
 
@@ -84,3 +76,58 @@ export const CartNumber = styled.div`
   right: 0;
   color: black;
 `;
+export const Profile = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(39, 39, 39);
+  gap: 10px;
+  border-radius: 10px;
+  padding: 0px 5px 0px 5px;
+  height: 30px;
+  width: 60px;
+  position: relative;
+
+  @media (max-width: 700px) {
+    height: 30px;
+    width: 30px;
+  }
+`;
+
+
+export const Dropdown = styled.div`
+  position: relative;
+  display: inline-block;
+`;
+
+export const DropdownToggle = styled.div`
+  cursor: pointer;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #000000;
+`;
+
+export const DropdownMenuList = styled.ul`
+transition: all .3s ease-in-out;
+  position: absolute;
+  top: 150%;
+  width: 100px;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: #000000;
+  border: 1px solid #000000;
+  border-radius: 7px;
+  z-index:10001;
+`;
+
+export const DropdownMenuItem = styled.li`
+  padding: 10px;
+  cursor: pointer;
+
+  &:hover {
+    background-color:rgb(39, 39, 39);
+  }
+`;
+

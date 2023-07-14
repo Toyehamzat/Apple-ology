@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import latests from "../../data/latest.json";
 import { LatestItem } from "../../components/latestItem";
-
+// import { useMediaQuery } from "react-responsive";
 //@ts-ignore
 import { FreeMode, Mousewheel, Autoplay } from "swiper";
 import "swiper/css";
@@ -21,12 +21,23 @@ import {
   LatestContainer,
 } from "./styles";
 export function Home() {
+  // const isMobile = useMediaQuery({ query: "(max-width:700px" });
   return (
     <Container>
       <FirstSection>
-        <video autoPlay loop muted playsInline>
-          <source src="images/large.mp4" type="video/mp4" />
-        </video>
+        {/* {isMobile ? (
+          <video id="smallVideo" autoPlay loop muted playsInline>
+            <source src="images/small.mp4" type="video/mp4" />
+          </video>
+        ) : (
+          <video id="largevideo" autoPlay loop muted playsInline>
+            <source src="images/large.mp4" type="video/mp4" />
+          </video>
+        )} */}
+        <video id="largevideo" autoPlay loop muted playsInline>
+            <source src="images/large.mp4" type="video/mp4" />
+          </video>
+
         <LeftScreen>
           <Intro>
             <Title>Apple-ology.</Title> The best way to buy the products you

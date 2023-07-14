@@ -1,15 +1,19 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { Home } from "./pages/Homepage/Home";
 import { Products } from "./pages/ProductsPage/products";
 import { Header } from "./components/Header/navbar";
-import { ShoppingCartProvider } from "./context/shoppingCartContext";
+import {
+  ShoppingCartProvider,
+  useShoppingCart,
+} from "./context/shoppingCartContext";
 import productss from "../src/data/productarray.json";
 import ItemDetails from "./components/ItemDetails";
 import { ShoppingCart } from "./pages/ShoppingCartPage/ShoppingCart";
 import { Footer } from "./components/footer/footer";
-import { UniversalAccess } from "react-bootstrap-icons";
+import { Bag } from "react-bootstrap-icons";
 export default function App() {
+  const { CartQuantity } = useShoppingCart();
   return (
     <ShoppingCartProvider>
       <Header />
@@ -28,8 +32,8 @@ export default function App() {
           ))}
         </Routes>
       </Container>
-      <Button type="button">
-        <UniversalAccess size={25} />
+      <Button type="button" to="/Cart" as={NavLink}>
+        <Bag id="bag" size={29} />
       </Button>
       <Footer />
     </ShoppingCartProvider>
@@ -47,11 +51,12 @@ const Button = styled.button`
   position: fixed;
   bottom: 5%;
   left: 5%;
+  padding: 8px;
+  display: flex;
+  justify-content: center;
   background-color: black;
   color: white;
   border: black;
   transition: all 0.4s ease-in-out;
-  &:hover {
-    transform: scale(1.3);
-  }
+  z-index: 10000;
 `;

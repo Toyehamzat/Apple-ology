@@ -16,6 +16,4 @@ export default function Product() {
   );
 }
 
-const Container = styled.div`
-
-`;
+const Container = styled.div``;
