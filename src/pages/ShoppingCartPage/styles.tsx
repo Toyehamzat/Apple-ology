@@ -26,7 +26,6 @@ export const Route = styled.div`
   /* margin-top: 20px; */
   font-size: 15px;
   margin-bottom: 60px;
-  position: relative;
 `;
 
 export const Body = styled.div`
@@ -81,7 +80,6 @@ export const SummaryContainer = styled.div`
   padding: 40px 40px;
   position: relative;
   border-radius: 15px;
-  z-index: -1000;
 `;
 
 export const Input = styled.input`
@@ -154,6 +152,7 @@ export const CheckOutBtn = styled.button`
   font-size: 17px;
   font-weight: 600;
   margin: auto;
+  cursor: pointer;
 `;
 
 export const PayPalBtn = styled.button`
@@ -164,4 +163,5 @@ export const PayPalBtn = styled.button`
   border: none;
   background-color: #b4b4b4;
   margin: auto;
+  cursor: pointer;
 `;

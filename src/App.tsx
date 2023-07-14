@@ -28,30 +28,33 @@ export default function App() {
           ))}
         </Routes>
       </Container>
-      <Button type="button" to="/Cart" as={NavLink}>
-        <Bag id="bag" size={23} />
+      <Button type="button" className="shop" to="/products" as={NavLink}>
+        <Bag id="bag" size={20} />
+        Shop now
       </Button>
       <Footer />
     </ShoppingCartProvider>
   );
 }
 
-const Container = styled.section`
-`;
+const Container = styled.section``;
 
 const Button = styled.button`
-  width:35px;
-  height:35px;
-  border-radius: 50%;
+  width: 150px;
+  height: 45px;
+  border-radius: 10px;
   position: fixed;
   bottom: 5%;
   left: 5%;
   padding: 5px;
-  display: flex;
+  flex-direction: row;
+  align-items: center;
   justify-content: center;
   background-color: black;
   color: white;
   border: black;
   transition: all 0.4s ease-in-out;
-  z-index: 10000;
+  z-index: 1000;
+  display: flex;
+  gap: 10px;
 `;

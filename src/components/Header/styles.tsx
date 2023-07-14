@@ -135,6 +135,8 @@ export const DropdownMenuItem = styled.li`
   cursor: pointer;
   display: flex;
   justify-content: space-between;
+  gap: 10px;
+  text-align: center;
 
   &:hover {
     background-color: rgb(39, 39, 39);
@@ -143,4 +145,5 @@ export const DropdownMenuItem = styled.li`
 
 export const Label = styled.label`
   cursor: pointer;
+  flex: 1 1;
 `;

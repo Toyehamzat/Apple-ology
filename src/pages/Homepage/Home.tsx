@@ -7,7 +7,6 @@ import { FreeMode, Mousewheel, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 import { ContactSection } from "../../components/Contact/ContactSection";
-import { Link } from "react-router-dom";
 import {
   Container,
   FirstSection,
@@ -19,33 +18,26 @@ import {
   Latest,
   Black,
   LatestContainer,
+  ImageCon,
+  Image,
 } from "./styles";
 export function Home() {
-  // const isMobile = useMediaQuery({ query: "(max-width:700px" });
   return (
     <Container>
       <FirstSection>
-        {/* {isMobile ? (
-          <video id="smallVideo" autoPlay loop muted playsInline>
-            <source src="images/small.mp4" type="video/mp4" />
-          </video>
-        ) : (
-          <video id="largevideo" autoPlay loop muted playsInline>
-            <source src="images/large.mp4" type="video/mp4" />
-          </video>
-        )} */}
         <video id="largevideo" autoPlay loop muted playsInline>
-            <source src="images/large.mp4" type="video/mp4" />
-          </video>
+          <source src="images/large.mp4" type="video/mp4" />
+        </video>
 
         <LeftScreen>
           <Intro>
             <Title>Apple-ology.</Title> The best way to buy the products you
             love.
           </Intro>
-          <Link to="/Products">
-            <Button>Shop Now</Button>
-          </Link>
+          <Button>Go Shopping</Button>
+          <ImageCon>
+            <Image src="images/whiteArrow.png" alt="arrow image" />
+          </ImageCon>
         </LeftScreen>
       </FirstSection>
       <SecondSection>
