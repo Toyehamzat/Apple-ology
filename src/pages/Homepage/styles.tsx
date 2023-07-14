@@ -47,42 +47,20 @@ export const LeftScreen = styled.div`
 `;
 
 export const Button = styled.button`
+  background: transparent;
   cursor: pointer;
-  background-color: #ffffff;
-  color: #000000;
+  backdrop-filter:blur(6px);
+  color: #ffffff;
   padding: 20px;
   width: 180px;
   border-radius: 50px;
   font-size: 16px;
   font-weight: 600;
   border: none;
-  margin-top: 20px;
+  margin-top: 15px;
   outline: 0;
   border: none;
   overflow: hidden;
-  transition: all 0.08s ease-in;
-  -o-transition: 0.08s ease-in;
-  -ms-transition: 0.08s ease-in;
-  -moz-transition: 0.08s ease-in;
-  -webkit-transition: 0.08s ease-in;
-  &:hover {
-    color: #ffffff;
-    transform: scale(1);
-  }
-  &::before {
-    content: "";
-    position: absolute;
-    background: black;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    top: 100%;
-    z-index: -1;
-    -webkit-transition: top 0.09s ease-in;
-  }
-  &:hover::before {
-    top: 0;
-  }
 `;
 
 export const Title = styled.span`
@@ -162,12 +140,12 @@ export const LatestContainer = styled.div`
 
 export const ImageCon = styled.div`
   position: relative;
-  width:200px;
-  height:200px;
+  width: 200px;
+  height: 200px;
 `;
 export const Image = styled.img`
-position: absolute;;
-top: -50%;
-left: 40%;
-transform: rotate(20deg)
+  position: absolute;
+  top: -50%;
+  left: 40%;
+  transform: rotate(20deg);
 `;

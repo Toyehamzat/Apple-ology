@@ -148,4 +148,7 @@ form>div {
     #footer-contact {
         font-size: max(12px, 1vw);
     }
+    #end{
+        font-size: 9px;
+    }
 }
