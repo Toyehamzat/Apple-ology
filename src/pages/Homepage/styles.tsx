@@ -49,7 +49,7 @@ export const LeftScreen = styled.div`
 export const Button = styled.button`
   background: transparent;
   cursor: pointer;
-  backdrop-filter:blur(6px);
+  backdrop-filter: blur(6px);
   color: #ffffff;
   padding: 20px;
   width: 180px;
@@ -57,7 +57,7 @@ export const Button = styled.button`
   font-size: 16px;
   font-weight: 600;
   border: none;
-  margin-top: 10px;
+  margin-top: 5px;
   outline: 0;
   border: none;
   overflow: hidden;
@@ -89,7 +89,6 @@ export const SecondSection = styled.section`
   width: 100%;
   align-items: center;
   justify-content: center;
-  position: relative;
   background: linear-gradient(
       rgba(255, 255, 255, 0.7),
       rgba(214, 225, 230, 0.7)
@@ -136,6 +135,11 @@ export const LatestContainer = styled.div`
   background: transparent;
   display: flex;
   justify-content: center;
+  @media (max-width: 550px) {
+    flex-direction: column;
+    gap: 1em;
+    margin-top: 10px;
+  }
 `;
 
 export const ImageCon = styled.div`

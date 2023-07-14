@@ -41,8 +41,6 @@
     background: transparent;
     transition: all .3s ease-in-out;
     justify-content: center;
-
-
 }
 #bag{
     transition: all .3s ease-in-out;
@@ -51,6 +49,11 @@
     transform: scale(1.1);
 
 }
+
+/* #latest{
+    display: flex;
+    flex-direction: column;
+} */
 
 
 @media (max-width: 550px) {

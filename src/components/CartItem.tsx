@@ -81,7 +81,6 @@ const Img = styled.img`
 `;
 
 const Body = styled.div`
-  position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -124,7 +123,6 @@ const ADDMINUSREMOVE = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  position: relative;
 
   @media (max-width: 400px) {
     width: 180px;

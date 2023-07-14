@@ -61,7 +61,6 @@ export const Right = styled.div`
   width: 55%;
   display: flex;
   justify-content: right;
-  position: relative;
 
   @media (max-width: 770px) {
     width: 100%;
@@ -78,7 +77,6 @@ export const SummaryContainer = styled.div`
   width: 500px;
   background-color: #e2eef4;
   padding: 40px 40px;
-  position: relative;
   border-radius: 15px;
 `;
 

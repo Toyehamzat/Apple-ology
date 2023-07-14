@@ -25,9 +25,11 @@ export const Title = styled.div`
   font-family: "Montserrat", sans-serif;
   font-size: 30px;
   cursor: pointer;
+  margin-left: 20px;
 
   @media (max-width: 700px) {
     font-size: 25px;
+    margin-left:80px;
   }
   @media (max-width: 550px) {
     font-size: 24px;
@@ -123,7 +125,7 @@ export const DropdownMenuList = styled.ul`
   margin: 0;
   padding: 0;
   list-style: none;
-  background-color: #000000;
+  background-color: rgb(39, 39, 39);
   border: none;
   border-radius: 7px;
   animation: fadein ease 3s;

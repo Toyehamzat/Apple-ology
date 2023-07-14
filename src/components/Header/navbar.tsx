@@ -1,6 +1,5 @@
 import "./styles.tsx";
 import {
-  List,
   Heart,
   Person,
   Bag,
@@ -18,7 +17,6 @@ import {
   Container,
   Icons,
   Title,
-  Icon,
   Profile,
   Dropdown,
   DropdownMenuList,
@@ -26,6 +24,7 @@ import {
   Label,
 } from "./styles.tsx";
 import { useState } from "react";
+import Sidebar from "../sidebar/sidebar.tsx";
 export function Header() {
   const { CartQuantity } = useShoppingCart();
   const [isOpen, setIsOpen] = useState(false);
@@ -41,9 +40,7 @@ export function Header() {
   return (
     <Navbar>
       <Container>
-        <Icon>
-          <List id="list " className="reduce" size={25} />
-        </Icon>
+        <Sidebar />
         <Link to="/" id="link">
           <Title>Apple-ology</Title>
         </Link>

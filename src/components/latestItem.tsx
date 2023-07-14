@@ -35,7 +35,7 @@ const Img = styled.img`
   border-bottom-left-radius: 20px;
 `;
 
-const Container = styled.a`
+const Container = styled.div`
   text-decoration: none;
   cursor: pointer;
   display: flex;

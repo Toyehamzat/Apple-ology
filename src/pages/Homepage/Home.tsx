@@ -22,6 +22,7 @@ import {
   Image,
 } from "./styles";
 export function Home() {
+  const isMobile = window.innerWidth <= 550;
   return (
     <Container>
       <FirstSection>
@@ -45,21 +46,31 @@ export function Home() {
           <Black>The lastest.</Black>Take a look at what's new,right now.
         </Latest>
         <LatestContainer>
-          <Swiper
-            slidesPerView={3.3}
-            spaceBetween={30}
-            freeMode={true}
-            onSlideChange={() => console.log("slide changed")}
-            onSwiper={(swiper) => console.log(swiper)}
-            mousewheel={true}
-            modules={[FreeMode, Mousewheel]}
-          >
-            {latests.map((latest, id) => (
-              <SwiperSlide key={id}>
-                <LatestItem {...latest} />
-              </SwiperSlide>
-            ))}
-          </Swiper>
+          {isMobile ? (
+            <>
+              {latests.map((latest, id) => (
+                <div key={id}>
+                  <LatestItem {...latest} />
+                </div>
+              ))}
+            </>
+          ) : (
+            <Swiper
+              slidesPerView={3.3}
+              spaceBetween={30}
+              freeMode={true}
+              onSlideChange={() => console.log("slide changed")}
+              onSwiper={(swiper) => console.log(swiper)}
+              mousewheel={true}
+              modules={[FreeMode, Mousewheel]}
+            >
+              {latests.map((latest, id) => (
+                <SwiperSlide key={id}>
+                  <LatestItem {...latest} />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          )}
         </LatestContainer>
       </SecondSection>
       <ContactSection />

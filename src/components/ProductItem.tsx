@@ -68,12 +68,7 @@ const Img = styled.img`
   height: 280px;
   width: 90%;
   object-fit: cover;
-
   transition: all 0.3s ease-in-out;
-
-  &:hover {
-    transform: scale(1.03);
-  }
 
   @media (max-width: 496px) {
     height: 200px;
