@@ -21,8 +21,10 @@ import {
   ImageCon,
   Image,
 } from "./styles";
+import { useShoppingCart } from "../../context/shoppingCartContext";
 export function Home() {
   const isMobile = window.innerWidth <= 550;
+  const { TargetDownRef } = useShoppingCart();
   return (
     <Container>
       <FirstSection>
@@ -41,7 +43,7 @@ export function Home() {
           </ImageCon>
         </LeftScreen>
       </FirstSection>
-      <SecondSection>
+      <SecondSection ref={TargetDownRef}>
         <Latest>
           <Black>The lastest.</Black>Take a look at what's new,right now.
         </Latest>

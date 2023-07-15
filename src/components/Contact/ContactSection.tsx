@@ -1,4 +1,3 @@
-
 import {
   Instagram,
   Github,
@@ -6,7 +5,7 @@ import {
   Whatsapp,
   Facebook,
 } from "react-bootstrap-icons";
-import {ContactWrapper, SocialLink, SocialMedia,ContactInfo} from "./styles"
+import { ContactWrapper, SocialLink, SocialMedia, ContactInfo } from "./styles";
 export function ContactSection() {
   return (
     <ContactWrapper>
@@ -46,4 +45,3 @@ export function ContactSection() {
     </ContactWrapper>
   );
 }
-

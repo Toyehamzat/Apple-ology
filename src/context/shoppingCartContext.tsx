@@ -9,6 +9,8 @@ type ShoppingCartContext = {
   RemoveFromCart: (id: number) => void;
   CartQuantity: number;
   cartItems: CartItem[];
+  TargetDownRef:any;
+  TargetDownRef1:any;
 };
 
 type CartItem = {
@@ -16,7 +18,7 @@ type CartItem = {
   quantity: number;
 };
 
-import { ReactNode, createContext, useContext} from "react";
+import { ReactNode, createContext, useContext, useRef} from "react";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 
 const ShoppingCartContext = createContext({} as ShoppingCartContext);
@@ -70,7 +72,8 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
       return currItems.filter((item) => item.id !== id);
     });
   }
-
+  const TargetDownRef = useRef<HTMLDivElement>(null);
+  const TargetDownRef1 = useRef<HTMLDivElement>(null);
   return (
     <ShoppingCartContext.Provider
       value={{
@@ -80,6 +83,8 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
         RemoveFromCart,
         cartItems,
         CartQuantity,
+        TargetDownRef,
+        TargetDownRef1
       }}
     >
       {children}

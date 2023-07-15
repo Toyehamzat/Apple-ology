@@ -24,7 +24,7 @@ import {
   Label,
 } from "./styles.tsx";
 import { useState } from "react";
-import Sidebar from "../sidebar/sidebar.tsx";
+import { Sidebar } from "../sidebar/sidebar.tsx";
 export function Header() {
   const { CartQuantity } = useShoppingCart();
   const [isOpen, setIsOpen] = useState(false);
@@ -45,8 +45,9 @@ export function Header() {
           <Title>Apple-ology</Title>
         </Link>
         <Icons>
-          {/* <Link id="link" to="/likedItem" as={NavLink}> */}
-          <Heart className="reduce" size={27} />
+          <Link id="link" to="/SavedItems">
+            <Heart className="reduce" size={27} />
+          </Link>
           {/* </Link> */}
           {/* <Link id="link" to="profile" as={NavLink}> */}
           <Cart id="link" to="/Cart" as={NavLink}>

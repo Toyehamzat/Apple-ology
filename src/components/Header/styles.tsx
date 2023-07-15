@@ -10,6 +10,7 @@ export const Container = styled.div`
   justify-content: space-between;
   position: sticky;
   height: 70px;
+  position: sticky;
 
   @media (max-width: 700px) {
     padding: 20px 30px;

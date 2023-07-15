@@ -1,9 +1,11 @@
 import { ArrowBarRight } from "react-bootstrap-icons";
 import "./STYLES.css";
+import { useShoppingCart } from "../../context/shoppingCartContext";
 export function Footer() {
+  const { TargetDownRef1 } = useShoppingCart();
   return (
     <>
-      <footer id="footer">
+      <footer id="footer" ref={TargetDownRef1}>
         <form action="" onSubmit={(e) => e.preventDefault()}>
           <h4>
             <label htmlFor="user-email">STAY IN THE KNOW</label>

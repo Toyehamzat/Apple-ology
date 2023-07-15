@@ -9,6 +9,7 @@ import ItemDetails from "./components/ItemDetails";
 import { ShoppingCart } from "./pages/ShoppingCartPage/ShoppingCart";
 import { Footer } from "./components/footer/footer";
 import { Bag } from "react-bootstrap-icons";
+import { SavedItems } from "./pages/SavedItems/SavedItems";
 export default function App() {
   return (
     <ShoppingCartProvider>
@@ -18,6 +19,7 @@ export default function App() {
           <Route path="/" element={<Home />}></Route>
           <Route path="/Products" element={<Products />}></Route>
           <Route path="/Cart" element={<ShoppingCart />}></Route>
+          <Route path="/savedItems" element={<SavedItems />}></Route>
           {productss.map((product, id) => (
             <Route
               key={id}

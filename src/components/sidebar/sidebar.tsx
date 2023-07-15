@@ -2,6 +2,86 @@ import styled from "styled-components";
 import { List } from "react-bootstrap-icons";
 import { gsap } from "gsap";
 import { useRef, useState } from "react";
+import { Link } from "react-router-dom";
+import { useShoppingCart } from "../../context/shoppingCartContext";
+
+export const Sidebar: React.FC = () => {
+  const [sideBarIsOpen, setBarIsOpen] = useState(false);
+  const sidebarRef = useRef<HTMLDivElement>(null);
+
+  const toggleSidebar = () => {
+    setBarIsOpen(!sideBarIsOpen);
+    animateSidebar();
+    toggleScrollLock(); // Toggle scroll lock when sidebar opens/closes
+  };
+
+  const animateSidebar = () => {
+    if (sidebarRef.current) {
+      const sidebar = sidebarRef.current;
+
+      if (!sideBarIsOpen) {
+        gsap.to(sidebar, { left: "0", duration: 0.1, ease: "power2.out" });
+      } else {
+        gsap.to(sidebar, { left: "-100%", duration: 0.1, ease: "power2.out" });
+      }
+    }
+  };
+
+  const toggleScrollLock = () => {
+    const body = document.querySelector("body");
+    if (body) {
+      body.style.overflow = sideBarIsOpen ? "auto" : "hidden";
+    }
+  };
+
+  const isMobile = window.innerWidth <= 550;
+
+  const { TargetDownRef1 } = useShoppingCart();
+
+  // const handleOptionSelect = () => {
+  //   TargetDownRef.current?.scrollIntoView({ behavior: "smooth" });
+  //   toggleSidebar();
+  // };
+
+  const handleOptionSelect2 = () => {
+    TargetDownRef1.current?.scrollIntoView({ behavior: "smooth" });
+    toggleSidebar();
+  };
+
+  return (
+    <>
+      <SidebarToggle isOpen={sideBarIsOpen} onClick={toggleSidebar}>
+        <List size={25} color="#ffffff" />
+      </SidebarToggle>
+      <SidebarContainer
+        isOpen={sideBarIsOpen}
+        isMobile={isMobile}
+        ref={sidebarRef}
+      >
+        <SidebarContent>
+          {/* <h2 onClick={() => handleOptionSelect()}>Latest Items</h2> */}
+          <h2>
+            <Link to="/" id="link" onClick={toggleSidebar}>
+              Home
+            </Link>
+          </h2>
+          <h2>
+            <Link to="/Cart" id="link" onClick={toggleSidebar}>
+              Cart
+            </Link>
+          </h2>
+          <h2>
+            <Link to="/SavedItems" id="link" onClick={toggleSidebar}>
+              Liked Items
+            </Link>
+          </h2>
+          <h2 onClick={() => handleOptionSelect2()}>Contact us</h2>
+        </SidebarContent>
+      </SidebarContainer>
+      <Backdrop isOpen={sideBarIsOpen} onClick={toggleSidebar} />
+    </>
+  );
+};
 
 const SidebarContainer = styled.div<{ isOpen: boolean; isMobile: boolean }>`
   position: fixed;
@@ -45,48 +125,3 @@ const Backdrop = styled.div<{ isOpen: boolean }>`
   z-index: 998;
   visibility: ${({ isOpen }) => (isOpen ? "visible" : "hidden")};
 `;
-
-const Sidebar: React.FC = () => {
-  const [sideBarIsOpen, setBarIsOpen] = useState(false);
-  const sidebarRef = useRef<HTMLDivElement>(null);
-
-  const toggleSidebar = () => {
-    setBarIsOpen(!sideBarIsOpen);
-    animateSidebar();
-  };
-
-  const animateSidebar = () => {
-    if (sidebarRef.current) {
-      const sidebar = sidebarRef.current;
-
-      if (!sideBarIsOpen) {
-        gsap.to(sidebar, { left: "0", duration: 0.1, ease: "power2.out" });
-      } else {
-        gsap.to(sidebar, { left: "-100%", duration: 0.1, ease: "power2.out" });
-      }
-    }
-  };
-
-  const isMobile = window.innerWidth <= 550;
-
-  return (
-    <>
-      <SidebarToggle isOpen={sideBarIsOpen} onClick={toggleSidebar}>
-        <List size={25} color="#ffffff" />
-      </SidebarToggle>
-      <SidebarContainer
-        isOpen={sideBarIsOpen}
-        isMobile={isMobile}
-        ref={sidebarRef}
-      >
-        <SidebarContent>
-          <h2>Sidebar Content</h2>
-          <p>This is the content of the sidebar.</p>
-        </SidebarContent>
-      </SidebarContainer>
-      <Backdrop isOpen={sideBarIsOpen} />
-    </>
-  );
-};
-
-export default Sidebar;
