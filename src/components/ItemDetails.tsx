@@ -24,7 +24,6 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { CurrencyFormat } from "../utilities/currencyFormatter";
 import { useShoppingCart } from "../context/shoppingCartContext";
-import { useRef } from "react";
 import { motion } from "framer-motion";
 
 export default function ItemDetails({
@@ -51,12 +50,12 @@ export default function ItemDetails({
     IncreaseCartQuantity,
     DecreaseCartQuantity,
     RemoveFromCart,
+    TargetDownRef,
+    TargetUpRef,
   } = useShoppingCart();
   const quantity = getItemQuantity(id);
-  const TargetDownRef = useRef<HTMLDivElement>(null);
-  const TargetUpRef = useRef<HTMLDivElement>(null);
   return (
-    <Container ref={TargetUpRef}>
+    <Container>
       <Route>
         <Link to="/" id="link">
           Home

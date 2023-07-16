@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { CurrencyFormat } from "../utilities/currencyFormatter";
 import { Link } from "react-router-dom";
 import { useShoppingCart } from "../context/shoppingCartContext";
+import { Heart } from "react-bootstrap-icons";
 type ProductItemProps = {
   name: string;
   id: number;
@@ -14,16 +15,18 @@ export function ProductItem({
   price,
   pictureNoBg,
 }: ProductItemProps) {
-  const { getItemQuantity, IncreaseCartQuantity, DecreaseCartQuantity } =
+  const { getItemQuantity, IncreaseCartQuantity, DecreaseCartQuantity,IncreaseLikeItems } =
     useShoppingCart();
   const quantity = getItemQuantity(id);
   return (
     <Card>
-      <Link id="link" to={`/Products${id}`}>
-        <ImgContainer>
-          <Img src={`${pictureNoBg}`} />
-        </ImgContainer>
-      </Link>
+      <ImgContainer>
+        <Link id="link" to={`/Products${id}`}>
+          <Img src={`${pictureNoBg}`} />{" "}
+        </Link>
+        <Heart size={27}  onClick={() => IncreaseLikeItems(id)}  />
+      </ImgContainer>
+
       <Body>
         <NamePrice>
           <Name>{name}</Name>
@@ -31,9 +34,11 @@ export function ProductItem({
         </NamePrice>
         <AddToCart>
           {quantity === 0 ? (
-            <AddToCartBtn onClick={() => IncreaseCartQuantity(id)}>
-              + Add to cart
-            </AddToCartBtn>
+            <>
+              <AddToCartBtn onClick={() => IncreaseCartQuantity(id)}>
+                + Add to cart
+              </AddToCartBtn>
+            </>
           ) : (
             <AddToCartActive>
               <AddMinus>

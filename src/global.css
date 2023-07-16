@@ -93,6 +93,9 @@
 
 
 }
+.reduce{
+    cursor: pointer;
+}
 
 .w-100 {
     width: 100%;

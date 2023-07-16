@@ -26,7 +26,7 @@ import {
 import { useState } from "react";
 import { Sidebar } from "../sidebar/sidebar.tsx";
 export function Header() {
-  const { CartQuantity } = useShoppingCart();
+  const { CartQuantity, TargetUpRef } = useShoppingCart();
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -38,7 +38,7 @@ export function Header() {
   };
 
   return (
-    <Navbar>
+    <Navbar ref={TargetUpRef}>
       <Container>
         <Sidebar />
         <Link to="/" id="link">
@@ -48,14 +48,12 @@ export function Header() {
           <Link id="link" to="/SavedItems">
             <Heart className="reduce" size={27} />
           </Link>
-          {/* </Link> */}
-          {/* <Link id="link" to="profile" as={NavLink}> */}
           <Cart id="link" to="/Cart" as={NavLink}>
             <Bag className="reduce" size={25} />
             {CartQuantity > 0 && <CartNumber>{CartQuantity}</CartNumber>}
           </Cart>
           <Dropdown>
-            <Profile onClick={toggleDropdown}>
+            <Profile  onClick={toggleDropdown}>
               <Person className="reduce" size={25} />
               <ChevronUp
                 onClick={toggleDropdown}

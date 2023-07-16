@@ -30,7 +30,7 @@ export const Title = styled.div`
 
   @media (max-width: 700px) {
     font-size: 25px;
-    margin-left:80px;
+    margin-left: 80px;
   }
   @media (max-width: 550px) {
     font-size: 24px;
@@ -147,9 +147,11 @@ export const DropdownMenuItem = styled.li`
   justify-content: space-between;
   gap: 10px;
   text-align: center;
+  transition: all 0.3s ease-out;
 
   &:hover {
     background-color: rgb(39, 39, 39);
+    color: #818080ff;
   }
 `;
 

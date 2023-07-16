@@ -38,11 +38,6 @@ export const Sidebar: React.FC = () => {
 
   const { TargetDownRef1 } = useShoppingCart();
 
-  // const handleOptionSelect = () => {
-  //   TargetDownRef.current?.scrollIntoView({ behavior: "smooth" });
-  //   toggleSidebar();
-  // };
-
   const handleOptionSelect2 = () => {
     TargetDownRef1.current?.scrollIntoView({ behavior: "smooth" });
     toggleSidebar();
@@ -59,23 +54,24 @@ export const Sidebar: React.FC = () => {
         ref={sidebarRef}
       >
         <SidebarContent>
-          {/* <h2 onClick={() => handleOptionSelect()}>Latest Items</h2> */}
-          <h2>
+          <SidebarList>
             <Link to="/" id="link" onClick={toggleSidebar}>
               Home
             </Link>
-          </h2>
-          <h2>
+          </SidebarList>
+          <SidebarList>
             <Link to="/Cart" id="link" onClick={toggleSidebar}>
               Cart
             </Link>
-          </h2>
-          <h2>
+          </SidebarList>
+          <SidebarList>
             <Link to="/SavedItems" id="link" onClick={toggleSidebar}>
               Liked Items
             </Link>
-          </h2>
-          <h2 onClick={() => handleOptionSelect2()}>Contact us</h2>
+          </SidebarList>
+          <SidebarList onClick={() => handleOptionSelect2()}>
+            Contact us
+          </SidebarList>
         </SidebarContent>
       </SidebarContainer>
       <Backdrop isOpen={sideBarIsOpen} onClick={toggleSidebar} />
@@ -113,6 +109,19 @@ const SidebarToggle = styled.button<{ isOpen: boolean }>`
 const SidebarContent = styled.div`
   padding: 20px;
   color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 25px;
+  font-weight: 500;
+`;
+
+const SidebarList = styled.label`
+  transition: all 0.3s ease-out;
+  cursor: pointer;
+  &:hover {
+    color: #818080ff;
+  }
 `;
 
 const Backdrop = styled.div<{ isOpen: boolean }>`
