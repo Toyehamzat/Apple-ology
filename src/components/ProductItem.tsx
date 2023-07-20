@@ -15,7 +15,7 @@ export function ProductItem({
   price,
   pictureNoBg,
 }: ProductItemProps) {
-  const { getItemQuantity, IncreaseCartQuantity, DecreaseCartQuantity,IncreaseLikeItems } =
+  const { getItemQuantity, IncreaseCartQuantity, DecreaseCartQuantity } =
     useShoppingCart();
   const quantity = getItemQuantity(id);
   return (
