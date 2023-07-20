@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { CurrencyFormat } from "../utilities/currencyFormatter";
 import { Link } from "react-router-dom";
 import { useShoppingCart } from "../context/shoppingCartContext";
-import { Heart } from "react-bootstrap-icons";
+// import { Heart } from "react-bootstrap-icons";
 type ProductItemProps = {
   name: string;
   id: number;
@@ -24,7 +24,7 @@ export function ProductItem({
         <Link id="link" to={`/Products${id}`}>
           <Img src={`${pictureNoBg}`} />{" "}
         </Link>
-        <Heart size={27}  onClick={() => IncreaseLikeItems(id)}  />
+        {/* <Heart size={27}  onClick={() => IncreaseLikeItems(id)}  /> */}
       </ImgContainer>
 
       <Body>
